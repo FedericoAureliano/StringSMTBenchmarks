@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>String Benchmarks</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Benchmark Test Results</h2>
+        <p>The figures below compare the performance of Z3str3 and CVC4 on a set of string benchmarks.
+            Click on the images for a closer look. Click on these links for more information on 
+            <a href="https://github.com/mtrberzi/z3/tree/develop">the version of Z3str3</a>, 
+            <a href="http://cvc4.cs.stanford.edu/web/2017/07/10/cvc4-1-5-released/">the version of CVC4</a>,
+            <a href="https://github.com/FedericoAureliano/StringSMTBenchmarks/tree/master/benchmark/problems">the benchmarks</a>,
+            or <a href="https://github.com/FedericoAureliano/StringSMTBenchmarks/tree/master/benchmark/data">the results</a>.
+        </p>
+        <br>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="thumbnail">
+                    <a href="./graphs/overall-cactus.png" target="_blank">
+                        <img src="./graphs/overall-cactus.png" alt="overall-cactus" style="width:100%">
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="thumbnail">
+                    <a href="./graphs/overall-comparison.png" target="_blank">
+                        <img src="./graphs/overall-comparison.png" alt="overall-comparison" style="width:100%">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="thumbnail">
+                    <a href="./graphs/concats-balanced-cactus.png" target="_blank">
+                        <img src="./graphs/concats-balanced-cactus.png" alt="concats-balanced-cactus" style="width:100%">
+                    </a>
+                    <a href="./graphs/concats-balanced-comparison.png" target="_blank">
+                        <img src="./graphs/concats-balanced-comparison.png" alt="concats-balanced-comparison" style="width:100%">
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail">
+                    <a href="./graphs/concats-big-cactus.png" target="_blank">
+                        <img src="./graphs/concats-big-cactus.png" alt="concats-big-cactus" style="width:100%">
+                    </a>
+                    <a href="./graphs/concats-big-comparison.png" target="_blank">
+                        <img src="./graphs/concats-big-comparison.png" alt="concats-big-comparison" style="width:100%">
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail">
+                    <a href="./graphs/concats-extracts-big-cactus.png" target="_blank">
+                        <img src="./graphs/concats-extracts-big-cactus.png" alt="concats-extracts-big-cactus" style="width:100%">
+                    </a>
+                    <a href="./graphs/concats-extracts-big-comparison.png" target="_blank">
+                        <img src="./graphs/concats-extracts-big-comparison.png" alt="concats-extracts-big-comparison" style="width:100%">
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail">
+                    <a href="./graphs/concats-extracts-small-cactus.png" target="_blank">
+                        <img src="./graphs/concats-extracts-small-cactus.png" alt="concats-extracts-small-cactus" style="width:100%">
+                    </a>
+                    <a href="./graphs/concats-extracts-small-comparison.png" target="_blank">
+                        <img src="./graphs/concats-extracts-small-comparison.png" alt="concats-extracts-small-comparison" style="width:100%">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="thumbnail">
+                    <a href="./graphs/concats-small-cactus.png" target="_blank">
+                        <img src="./graphs/concats-small-cactus.png" alt="concats-small-cactus" style="width:100%">
+                    </a>
+                    <a href="./graphs/concats-small-comparison.png" target="_blank">
+                        <img src="./graphs/concats-small-comparison.png" alt="concats-small-comparison" style="width:100%">
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail">
+                    <a href="./graphs/kaluza-sat-big-cactus.png" target="_blank">
+                        <img src="./graphs/kaluza-sat-big-cactus.png" alt="kaluza-sat-big-cactus" style="width:100%">
+                    </a>
+                    <a href="./graphs/kaluza-sat-big-comparison.png" target="_blank">
+                        <img src="./graphs/kaluza-sat-big-comparison.png" alt="kaluza-sat-big-comparison" style="width:100%">
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail">
+                    <a href="./graphs/kaluza-sat-small-cactus.png" target="_blank">
+                        <img src="./graphs/kaluza-sat-small-cactus.png" alt="kaluza-sat-small-cactus" style="width:100%">
+                    </a>
+                    <a href="./graphs/kaluza-sat-small-comparison.png" target="_blank">
+                        <img src="./graphs/kaluza-sat-small-comparison.png" alt="kaluza-sat-small-comparison" style="width:100%">
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail">
+                    <a href="./graphs/kaluza-unsat-big-cactus.png" target="_blank">
+                        <img src="./graphs/kaluza-unsat-big-cactus.png" alt="kaluza-unsat-big-cactus" style="width:100%">
+                    </a>
+                    <a href="./graphs/kaluza-unsat-big-comparison.png" target="_blank">
+                        <img src="./graphs/kaluza-unsat-big-comparison.png" alt="kaluza-unsat-big-comparison" style="width:100%">
+                    </a>
+                </div>
+            </div>
+        </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="thumbnail">
+                <a href="./graphs/kaluza-unsat-small-cactus.png" target="_blank">
+                    <img src="./graphs/kaluza-unsat-small-cactus.png" alt="kaluza-unsat-small-cactus" style="width:100%">
+                </a>
+                <a href="./graphs/kaluza-unsat-small-comparison.png" target="_blank">
+                    <img src="./graphs/kaluza-unsat-small-comparison.png" alt="kaluza-unsat-small-comparison" style="width:100%">
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="thumbnail">
+                <a href="./graphs/lengths-long-cactus.png" target="_blank">
+                    <img src="./graphs/lengths-long-cactus.png" alt="lengths-long-cactus" style="width:100%">
+                </a>
+                <a href="./graphs/lengths-long-comparison.png" target="_blank">
+                    <img src="./graphs/lengths-long-comparison.png" alt="lengths-long-comparison" style="width:100%">
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="thumbnail">
+                <a href="./graphs/lengths-short-cactus.png" target="_blank">
+                    <img src="./graphs/lengths-short-cactus.png" alt="lengths-short-cactus" style="width:100%">
+                </a>
+                <a href="./graphs/lengths-short-comparison.png" target="_blank">
+                    <img src="./graphs/lengths-short-comparison.png" alt="lengths-short-comparison" style="width:100%">
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="thumbnail">
+                <a href="./graphs/many-regexes-cactus.png" target="_blank">
+                    <img src="./graphs/many-regexes-cactus.png" alt="many-regexes-cactus" style="width:100%">
+                </a>
+                <a href="./graphs/many-regexes-comparison.png" target="_blank">
+                    <img src="./graphs/many-regexes-comparison.png" alt="many-regexes-comparison" style="width:100%">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="thumbnail">
+                <a href="./graphs/overlaps-big-cactus.png" target="_blank">
+                    <img src="./graphs/overlaps-big-cactus.png" alt="overlaps-big-cactus" style="width:100%">
+                </a>
+                <a href="./graphs/overlaps-big-comparison.png" target="_blank">
+                    <img src="./graphs/overlaps-big-comparison.png" alt="overlaps-big-comparison" style="width:100%">
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="thumbnail">
+                <a href="./graphs/overlaps-small-cactus.png" target="_blank">
+                    <img src="./graphs/overlaps-small-cactus.png" alt="overlaps-small-cactus" style="width:100%">
+                </a>
+                <a href="./graphs/overlaps-small-comparison.png" target="_blank">
+                    <img src="./graphs/overlaps-small-comparison.png" alt="overlaps-small-comparison" style="width:100%">
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="thumbnail">
+                <a href="./graphs/regex-big-cactus.png" target="_blank">
+                    <img src="./graphs/regex-big-cactus.png" alt="regex-big-cactus" style="width:100%">
+                </a>
+                <a href="./graphs/regex-big-comparison.png" target="_blank">
+                    <img src="./graphs/regex-big-comparison.png" alt="regex-big-comparison" style="width:100%">
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="thumbnail">
+                <a href="./graphs/regex-deep-cactus.png" target="_blank">
+                    <img src="./graphs/regex-deep-cactus.png" alt="regex-deep-cactus" style="width:100%">
+                </a>
+                <a href="./graphs/regex-deep-comparison.png" target="_blank">
+                    <img src="./graphs/regex-deep-comparison.png" alt="regex-deep-comparison" style="width:100%">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="thumbnail">
+                <a href="./graphs/regex-lengths-cactus.png" target="_blank">
+                    <img src="./graphs/regex-lengths-cactus.png" alt="regex-lengths-cactus" style="width:100%">
+                </a>
+                <a href="./graphs/regex-lengths-comparison.png" target="_blank">
+                    <img src="./graphs/regex-lengths-comparison.png" alt="regex-lengths-comparison" style="width:100%">
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="thumbnail">
+                <a href="./graphs/regex-pair-cactus.png" target="_blank">
+                    <img src="./graphs/regex-pair-cactus.png" alt="regex-pair-cactus" style="width:100%">
+                </a>
+                <a href="./graphs/regex-pair-comparison.png" target="_blank">
+                    <img src="./graphs/regex-pair-comparison.png" alt="regex-pair-comparison" style="width:100%">
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="thumbnail">
+                <a href="./graphs/regex-small-cactus.png" target="_blank">
+                    <img src="./graphs/regex-small-cactus.png" alt="regex-small-cactus" style="width:100%">
+                </a>
+                <a href="./graphs/regex-small-comparison.png" target="_blank">
+                    <img src="./graphs/regex-small-comparison.png" alt="regex-small-comparison" style="width:100%">
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="thumbnail">
+                <a href="./graphs/lengths-concats-cactus.png" target="_blank">
+                    <img src="./graphs/lengths-concats-cactus.png" alt="lengths-concats-cactus" style="width:100%">
+                </a>
+                <a href="./graphs/lengths-concats-comparison.png" target="_blank">
+                    <img src="./graphs/lengths-concats-comparison.png" alt="lengths-concats-comparison" style="width:100%">
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
