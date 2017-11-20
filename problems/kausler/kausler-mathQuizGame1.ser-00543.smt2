@@ -1,0 +1,28 @@
+(set-logic QF_S)
+(set-option :produce-models true)
+
+(declare-fun s2369 () String)
+(declare-fun s2372 () String)
+(declare-fun s2387 () String)
+(declare-fun s2375 () String)
+(declare-fun s2384 () String)
+(declare-fun s2378 () String)
+(declare-fun s2381 () String)
+
+(assert (= s2375 "/restart" ))
+(assert (not (str.contains s2369 s2387 )))
+(assert (= s2381 "/quit" ))
+(assert (not (= s2369 s2381 )))
+(assert (= s2384 "/clear" ))
+(assert (not (= s2369 s2372 )))
+(assert (not (= s2369 s2378 )))
+(assert (not (= s2369 s2384 )))
+(assert (= s2372 "y" ))
+(assert (not (= s2369 s2375 )))
+(assert (str.contains s2369 s2387 ))
+(assert (= s2378 "n" ))
+(assert (= s2387 "/setfont" ))
+
+
+(check-sat)
+(get-model)

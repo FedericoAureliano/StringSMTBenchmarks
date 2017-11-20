@@ -1,0 +1,15 @@
+(set-logic QF_S)
+(set-option :produce-models true)
+
+(declare-fun s4888 () String)
+(declare-fun s4891 () String)
+(declare-fun s4872 () String)
+
+(assert (= s4888 "p" ))
+(assert (= s4891 "k" ))
+(assert (not (= s4872 s4891 )))
+(assert (not (= s4872 s4888 )))
+
+
+(check-sat)
+(get-model)

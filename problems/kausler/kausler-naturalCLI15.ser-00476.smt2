@@ -1,0 +1,21 @@
+(set-logic QF_S)
+(set-option :produce-models true)
+
+(declare-fun temp2_2969_2980 () String)
+(declare-fun temp2_2969_2985 () String)
+(declare-fun temp1_2969_2985 () String)
+(declare-fun s2969 () String)
+(declare-fun s2980 () String)
+(declare-fun temp1_2969_2980 () String)
+(declare-fun s2985 () String)
+
+(assert (= (str.++ temp1_2969_2980 temp2_2969_2980) s2969) )
+(assert (= (str.len temp2_2969_2985) (str.len s2985) ) )
+(assert (not (= s2980 temp1_2969_2980) ) )
+(assert (not (= s2985 temp2_2969_2985) ) )
+(assert (= (str.len temp1_2969_2980) (str.len s2980) ) )
+(assert (= (str.++ temp1_2969_2985 temp2_2969_2985) s2969) )
+
+
+(check-sat)
+(get-model)

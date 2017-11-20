@@ -1,0 +1,18 @@
+(set-logic QF_S)
+(set-option :produce-models true)
+
+(declare-fun s124 () String)
+(declare-fun s139 () String)
+(declare-fun s134 () String)
+(declare-fun s129 () String)
+
+(assert (= s134 "middle school" ))
+(assert (= s124 s139 ))
+(assert (= s129 "elementary" ))
+(assert (= s139 "high school" ))
+(assert (not (= s124 s134 )))
+(assert (not (= s124 s129 )))
+
+
+(check-sat)
+(get-model)

@@ -1,0 +1,15 @@
+(set-logic QF_S)
+(set-option :produce-models true)
+
+(declare-fun s6504 () String)
+(declare-fun s6503 () String)
+(declare-fun s6507 () String)
+
+(assert (= s6504 s6503 ))
+(assert (= s6507 "" ))
+(assert (= s6504 s6507 ))
+(assert (= s6503 "2" ))
+
+
+(check-sat)
+(get-model)

@@ -1,0 +1,11 @@
+(set-logic QF_S)
+(set-option :produce-models true)
+
+(declare-fun s435 () String)
+(declare-fun s440 () String)
+
+(assert (= s440 s435 ))
+
+
+(check-sat)
+(get-model)

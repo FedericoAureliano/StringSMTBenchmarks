@@ -1,0 +1,28 @@
+(set-logic QF_S)
+(set-option :produce-models true)
+
+(declare-fun s2353 () String)
+(declare-fun s2349 () String)
+(declare-fun s2321 () String)
+(declare-fun s2340 () String)
+(declare-fun s2343 () String)
+(declare-fun s2346 () String)
+(declare-fun s2337 () String)
+
+(assert (not (= s2321 s2337 )))
+(assert (= s2340 "k" ))
+(assert (= s2349 "l" ))
+(assert (not (= s2321 s2340 )))
+(assert (not (= s2321 s2353 )))
+(assert (= s2321 s2353 ))
+(assert (not (= s2321 s2343 )))
+(assert (= s2346 "r" ))
+(assert (not (= s2321 s2349 )))
+(assert (= s2337 "p" ))
+(assert (= s2343 "g" ))
+(assert (= s2353 "h" ))
+(assert (not (= s2321 s2346 )))
+
+
+(check-sat)
+(get-model)

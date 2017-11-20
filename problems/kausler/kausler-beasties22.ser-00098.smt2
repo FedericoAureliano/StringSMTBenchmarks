@@ -1,0 +1,10 @@
+(set-logic QF_S)
+(set-option :produce-models true)
+
+(declare-fun s1469 () String)
+
+(assert (not (= s1469 "") ) )
+
+
+(check-sat)
+(get-model)

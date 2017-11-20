@@ -1,0 +1,27 @@
+(set-logic QF_S)
+(set-option :produce-models true)
+
+(declare-fun s1711 () String)
+(declare-fun s1717 () String)
+(declare-fun s1720 () String)
+(declare-fun s1708 () String)
+(declare-fun s1714 () String)
+(declare-fun s1692 () String)
+(declare-fun s1723 () String)
+
+(assert (not (= s1692 s1714 )))
+(assert (= s1720 "l" ))
+(assert (not (= s1692 s1708 )))
+(assert (not (= s1692 s1720 )))
+(assert (= s1714 "g" ))
+(assert (= s1723 "h" ))
+(assert (= s1708 "p" ))
+(assert (not (= s1692 s1717 )))
+(assert (not (= s1692 s1723 )))
+(assert (= s1717 "r" ))
+(assert (= s1711 "k" ))
+(assert (not (= s1692 s1711 )))
+
+
+(check-sat)
+(get-model)

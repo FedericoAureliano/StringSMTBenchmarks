@@ -1,0 +1,18 @@
+(set-logic QF_S)
+(set-option :produce-models true)
+
+(declare-fun s2299 () String)
+(declare-fun s2300 () String)
+(declare-fun s2303 () String)
+(declare-fun s2306 () String)
+
+(assert (= s2300 s2299 ))
+(assert (= s2299 ")" ))
+(assert (= s2306 ")" ))
+(assert (= s2303 "" ))
+(assert (not (= s2300 s2303 )))
+(assert (= s2300 s2306 ))
+
+
+(check-sat)
+(get-model)

@@ -1,0 +1,19 @@
+(set-logic QF_S)
+(set-option :produce-models true)
+
+(declare-fun s2827 () String)
+(declare-fun s2824 () String)
+(declare-fun s2820 () String)
+(declare-fun s2821 () String)
+
+(assert (= s2827 ")" ))
+(assert (= s2821 s2827 ))
+(assert (= s2824 "" ))
+(assert (not (= s2821 s2824 )))
+(assert (= s2821 s2820 ))
+(assert (= s2820 ")" ))
+(assert (not (= s2821 s2827 )))
+
+
+(check-sat)
+(get-model)

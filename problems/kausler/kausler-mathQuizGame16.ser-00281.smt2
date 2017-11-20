@@ -1,0 +1,18 @@
+(set-logic QF_S)
+(set-option :produce-models true)
+
+(declare-fun s1311 () String)
+(declare-fun s1314 () String)
+(declare-fun s1308 () String)
+(declare-fun s1317 () String)
+
+(assert (= s1311 "y" ))
+(assert (not (= s1308 s1311 )))
+(assert (not (= s1308 s1314 )))
+(assert (= s1317 "n" ))
+(assert (= s1314 "/restart" ))
+(assert (not (= s1308 s1317 )))
+
+
+(check-sat)
+(get-model)

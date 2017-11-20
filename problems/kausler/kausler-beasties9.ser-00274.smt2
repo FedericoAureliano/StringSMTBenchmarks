@@ -1,0 +1,27 @@
+(set-logic QF_S)
+(set-option :produce-models true)
+
+(declare-fun s3606 () String)
+(declare-fun s3590 () String)
+(declare-fun s3612 () String)
+(declare-fun s3615 () String)
+(declare-fun s3609 () String)
+(declare-fun s3653 () String)
+(declare-fun s3618 () String)
+
+(assert (= s3653 "q" ))
+(assert (= s3612 "g" ))
+(assert (not (= s3590 s3609 )))
+(assert (not (= s3590 s3606 )))
+(assert (= s3590 s3653 ))
+(assert (= s3606 "p" ))
+(assert (not (= s3590 s3612 )))
+(assert (= s3618 "l" ))
+(assert (= s3590 s3618 ))
+(assert (= s3609 "k" ))
+(assert (= s3615 "r" ))
+(assert (not (= s3590 s3615 )))
+
+
+(check-sat)
+(get-model)
