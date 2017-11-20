@@ -115,7 +115,12 @@ def main():
         if (problems == []):
             continue
         category = os.path.basename(path)
+        if category in ["kaluza", "kausler", "PyEx"]:
+            continue
+        print(category)
         for solver, command in SOLVERS.items():
+            if solver == "CVC4":
+                continue #comment this section out when you want to run cvc4 on new benchmarks
             # run the problems
             results = []
             for problem in problems:

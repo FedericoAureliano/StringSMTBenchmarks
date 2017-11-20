@@ -1,10 +1,8 @@
 #!/bin/sh
 
 rm status.txt
-rm -r data graphs
-mkdir data
-mkdir graphs
-./grabz3.sh
+rm -r data/overall-CVC4.json data/overall-Z3str3.json
+# ./grabz3.sh
 ./bench.py 2> status.txt
 ./overall.py
 
