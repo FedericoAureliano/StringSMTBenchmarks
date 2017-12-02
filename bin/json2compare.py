@@ -162,35 +162,55 @@ def main():
         help = 'name of the experiment (used in the title)'
     )
     parser.add_argument(
-        'a',
-        type    = argparse.FileType('r'),
-        help    = 'dataset for solver A'
-    )
-    parser.add_argument(
-        'b',
-        type    = argparse.FileType('r'),
-        help    = 'dataset for solver B'
+        'datasets',
+        metavar = 'dataset',
+        type    = str,
+        nargs   = '+',
+        help    = 'JSON file with benchmark results in the described format'
     )
 
     # parse args
     args = parser.parse_args()
 
-    # read in data
-    a_data = json.loads(args.a.read())
-    b_data = json.loads(args.b.read())
+    # load data
+    data = {}
+    for dataset_path in args.datasets:
 
-    # error out on empty data
-    if len(a_data) == 0 or len(b_data) == 0:
+        # read file
+        with open(dataset_path, 'r') as file:
+            points = json.load(file)
+
+        # add points
+        for point in points:
+            solver = point['solver']
+
+            # create dataset for the solver
+            if solver not in data:
+                data[solver] = []
+
+            # add the point to the dataset if it's plottable
+            if plottable(point):
+                data[solver].append(point)
+
+    # check data size
+    if len(data) < 1:
         print('ERROR: no data', file=sys.stderr)
-        return
+        exit(1)
 
-    # make names
-    a_name = get_solver_name(a_data)
-    b_name = get_solver_name(b_data)
-    title  = '{}: {} vs {}'.format(args.name, a_name, b_name)
+    # drop empty data sets
+    empty_set_names = []
+    for solver, points in data.items():
+        if len(points) < 1:
+            print('WARNING: no plottable points for solver {}'.format(solver), file=sys.stderr)
+            empty_set_names.append(solver)
+
+    for name in empty_set_names:
+        data.pop(name)
+
+    title  = '{}: {} vs {}'.format(args.name, "Z3str3", "CVC4")
 
     # print PNG image
-    sys.stdout.buffer.write(data2png(a_data, a_name, b_data, b_name, title))
+    sys.stdout.buffer.write(data2png(data["Z3str3"], "Z3str3", data["CVC4"], "CVC4", title))
 
 if __name__ == '__main__':
     main()
