@@ -1,0 +1,1 @@
+[{"solver": "CVC4", "problem": "Vx0.smt2", "elapsed": 0.016204833984375, "result": "unsat", "command": "cvc4 --lang smt --strings-exp PROBLEM"}]

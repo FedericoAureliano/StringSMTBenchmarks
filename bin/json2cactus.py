@@ -74,7 +74,7 @@ def unknown2timeout(row):
 def get_solver_name(dataset):
     return dataset[0]['solver']
 
-def data2png(raw_data, title):
+def data2png(raw_data, title, subtitle):
 
     # configure plot library to use SVG
     import matplotlib
@@ -83,6 +83,7 @@ def data2png(raw_data, title):
 
     # set axis labels and graph title
     pyplot.suptitle(title + '\n', fontsize=TITLE_FONTSIZE)
+    pyplot.title(subtitle, fontsize=SUBTITLE_FONTSIZE)
     pyplot.xlabel('problems', fontsize=SUBTITLE_FONTSIZE)
     pyplot.ylabel('time (s)', fontsize=LABEL_FONTSIZE, labelpad=12)
 
@@ -211,13 +212,21 @@ def main():
         data.pop(name)
 
     # get largest data set size
-    size = max(map(len, data.values()))
+    # size = max(map(len, data.values()))
 
     # make title
-    title = '{}: {} problems, {}-s timeout'.format(args.name, size, args.timeout)
+    title = '{}: {}-s timeout'.format(args.name, args.timeout)
+
+    # measure performance
+    subtitle = '''{x} processed {p1} problems, {y} processed {p2} problems'''.format(
+        x  = "Z3str3",
+        p1  = len(data["Z3str3"]) if "Z3str3" in data else 0,
+        y  = "CVC4",
+        p2  = len(data["CVC4"]) if "CVC4" in data else 0
+    )
 
     # print PNG image
-    sys.stdout.buffer.write(data2png(data.values(), title))
+    sys.stdout.buffer.write(data2png(data.values(), title, subtitle))
 
 if __name__ == '__main__':
     main()

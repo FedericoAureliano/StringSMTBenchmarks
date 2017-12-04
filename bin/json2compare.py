@@ -12,6 +12,8 @@ TITLE_FONTSIZE     = 14
 SUBTITLE_FONTSIZE  = 10
 DEFAULT_AXIS_LIMIT = 10
 AXIS_MIN           = 0
+TIE                = 0.01
+TIMEOUT            = 15.0
 
 DESCRIPTION = '''
 Make a comparison plot from two datasets and print it in PNG format on stdout.
@@ -28,14 +30,6 @@ dataset format:
   ]
 '''
 
-MARKERS = [
-    4,
-    5,
-    6,
-    7,
-    8
-]
-
 # helpers
 def plottable(row):
     return (
@@ -47,10 +41,7 @@ def plottable(row):
 def get_solver_name(dataset):
     return dataset[0]['solver']
 
-def get_i(data, i):
-    return [d[i] for d in data]
-
-def data2png(x, x_name, y, y_name, title):
+def data2png(data, x_name, y_name, title):
 
     # configure plot library to use SVG
     import matplotlib
@@ -58,51 +49,57 @@ def data2png(x, x_name, y, y_name, title):
     import matplotlib.pyplot as pyplot
 
     # combine data
-    points     = []
     num_better = 0
     num_worse  = 0
-    for x_row, y_row in zip(x, y):
+    num_tie    = 0
+    points = []
+    for _, result in data.items():
 
-        x_value = x_row['elapsed']
-        y_value = y_row['elapsed']
+        if x_name in result and y_name in result:
+            x_value = result[x_name]
+            y_value = result[y_name]
 
-        # only look at plottable runs
-        if plottable(x_row) and plottable(y_row):
-
-            # record performance
-            if x_value <= y_value:
+            if x_value - y_value < -TIE:
                 num_better += 1
-            else:
+            elif x_value - y_value > TIE:
                 num_worse += 1
-
+            else:
+                num_tie += 1
             # save the point
-            points.append((x_row['elapsed'], y_row['elapsed']))
+            points.append((x_value, y_value))
+        elif x_name in result and result[x_name] < TIMEOUT:
+            num_better += 1
+        elif y_name in result and result[y_name] < TIMEOUT:
+            num_worse += 1
+        else:
+            num_tie += 1
 
     # get total number of runs
-    num_total = num_better + num_worse
+    num_total = num_better + num_worse + num_tie
     if num_total > 0:
 
         # measure performance
-        subtitle = '''{x} was better {b}/{t} times ({bp:.2f} %), worse {w}/{t} times ({wp:.2f} %)'''.format(
+        subtitle = '''{x} wins {b}({bp:.2f}%), loses {w}({wp:.2f}%), ties {ti}({tt:.2f}%)'''.format(
             x  = x_name,
             b  = num_better,
             w  = num_worse,
-            t  = num_total,
+            ti = num_tie,
             bp = (num_better / num_total) * 100.0,
-            wp = (num_worse / num_total) * 100.0
+            wp = (num_worse / num_total) * 100.0,
+            tt = (num_tie / num_total) * 100.0
         )
 
     else:
         subtitle = '''not enough data to determine which was better'''
 
     # set axis labels and graph title
-    pyplot.suptitle(title + '\n', fontsize=TITLE_FONTSIZE)
+    pyplot.suptitle(title + " (tie within "+ str(TIE) + 's)\n', fontsize=TITLE_FONTSIZE)
     pyplot.title(subtitle, fontsize=SUBTITLE_FONTSIZE)
     pyplot.xlabel('{} time (s)'.format(x_name), fontsize=LABEL_FONTSIZE)
     pyplot.ylabel('{} time (s)'.format(y_name), fontsize=LABEL_FONTSIZE, labelpad=12)
 
-    x_values = get_i(points, 0)
-    y_values = get_i(points, 1)
+    x_values = [points[i][0] for i in range(len(points))]
+    y_values = [points[i][1] for i in range(len(points))]
 
     # determine axis limits
     # NOTE: this needs to be a square plot, so the axes have the same limits
@@ -177,40 +174,29 @@ def main():
     for dataset_path in args.datasets:
 
         # read file
-        with open(dataset_path, 'r') as file:
-            points = json.load(file)
+        with open(dataset_path, 'r') as f:
+            points = json.load(f)
 
         # add points
         for point in points:
-            solver = point['solver']
+            problem = os.path.dirname(dataset_path) + point['problem']
 
             # create dataset for the solver
-            if solver not in data:
-                data[solver] = []
+            if problem not in data:
+                data[problem] = {}
 
-            # add the point to the dataset if it's plottable
             if plottable(point):
-                data[solver].append(point)
+                data[problem][point['solver']] = point['elapsed']
 
     # check data size
     if len(data) < 1:
         print('ERROR: no data', file=sys.stderr)
         exit(1)
 
-    # drop empty data sets
-    empty_set_names = []
-    for solver, points in data.items():
-        if len(points) < 1:
-            print('WARNING: no plottable points for solver {}'.format(solver), file=sys.stderr)
-            empty_set_names.append(solver)
-
-    for name in empty_set_names:
-        data.pop(name)
-
     title  = '{}: {} vs {}'.format(args.name, "Z3str3", "CVC4")
 
     # print PNG image
-    sys.stdout.buffer.write(data2png(data["Z3str3"], "Z3str3", data["CVC4"], "CVC4", title))
+    sys.stdout.buffer.write(data2png(data, "Z3str3", "CVC4", title))
 
 if __name__ == '__main__':
     main()
