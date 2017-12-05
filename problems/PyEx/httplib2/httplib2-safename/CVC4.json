@@ -1,0 +1,1 @@
+[{"solver": "CVC4", "problem": "e76c4cd78f6b5fb666c2d843eedd43da66f39e1703bd540200ab7740.smt2", "elapsed": 0.06452488899230957, "result": "sat", "command": "cvc4 --lang smt --strings-exp e76c4cd78f6b5fb666c2d843eedd43da66f39e1703bd540200ab7740.smt2"}]

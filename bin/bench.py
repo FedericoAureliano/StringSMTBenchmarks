@@ -66,6 +66,8 @@ def run_problem(solver, invocation, problem):
         # set timeout result
         elapsed = TIMEOUT
         result  = TIMEOUT_RESULT
+    except:
+        print("SOMETHING REALLY BAD HAPPENED", problem)
     # if it completes in time ...
     else:
         # measure run time
@@ -77,7 +79,7 @@ def run_problem(solver, invocation, problem):
         result = output2result(stdout + stderr)
     # make result
     result = Result(
-        command=invocation + 'PROBLEM',
+        command=invocation + problem,
         solver=solver,
         problem=problem,
         elapsed=elapsed,
