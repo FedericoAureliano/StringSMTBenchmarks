@@ -1,1 +1,1 @@
-[{"solver": "CVC4", "problem": "a8938f77afd9ea4b569224b1183621a8fdd9b9d103a5073ebeabd4d6.smt2", "elapsed": 0.11459994316101074, "result": "error", "command": "cvc4 --lang smt --strings-exp a8938f77afd9ea4b569224b1183621a8fdd9b9d103a5073ebeabd4d6.smt2"}]
+[{"solver": "CVC4", "problem": "a8938f77afd9ea4b569224b1183621a8fdd9b9d103a5073ebeabd4d6.smt2", "elapsed": 0.06446003913879395, "result": "error", "command": "cvc4 --lang smt --strings-exp a8938f77afd9ea4b569224b1183621a8fdd9b9d103a5073ebeabd4d6.smt2"}]
