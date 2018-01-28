@@ -12,13 +12,16 @@ do
                 do
                 extension="${file##*.}"
                 filename="${file%.*}"
-                stringfuzzx -f "$file" fuzz > "$filename-fuzz.$extension"
-                stringfuzzx -f "$file" rotate > "$filename-rotate.$extension"
-                stringfuzzx -f "$file" graft > "$filename-graft.$extension"
-                stringfuzzx -f "$file" translate > "$filename-translate.$extension"
-                stringfuzzx -f "$file" reverse > "$filename-reverse.$extension"
-                stringfuzzx -f "$file" multiply > "$filename-multiply.$extension"
-            done
+                stringfuzzx -r -f "$file" fuzz > "$filename-fuzz.$extension"
+                stringfuzzx -r -f "$file" rotate > "$filename-rotate.$extension"
+                stringfuzzx -r -f "$file" graft > "$filename-graft.$extension"
+                stringfuzzx -r -f "$file" translate > "$filename-translate.$extension"
+                stringfuzzx -r -f "$file" reverse > "$filename-reverse.$extension"
+                stringfuzzx -r -f "$file" multiply > "$filename-multiply.$extension"
+	        done
+            find $folder -type f -empty
+	        find $folder -type f -empty -delete
+	        ./rmdup.sh $folder/*
         fi
     fi
 done
