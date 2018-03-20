@@ -1,1 +1,0 @@
-[{"solver": "Z3str3", "problem": "b4f4e8a1f0a830cc1b7d0c4d47b956bd30a580155c83855e36759de5.smt2", "elapsed": 6.279181957244873, "result": "error", "command": "/home/fmora/workspace/StringSMTBenchmarks/bin/z3/build/z3 smt.string_solver=z3str3 b4f4e8a1f0a830cc1b7d0c4d47b956bd30a580155c83855e36759de5.smt2"}]

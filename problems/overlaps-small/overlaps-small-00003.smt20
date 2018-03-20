@@ -1,0 +1,5 @@
+(declare-fun var0 () String)
+(declare-fun var1 () String)
+(declare-fun var2 () String)
+(assert (= (Concat "aGp" (Concat var0 (Concat var1 var2))) (Concat (Concat var0 (Concat var1 var2)) "phb")))
+(check-sat)

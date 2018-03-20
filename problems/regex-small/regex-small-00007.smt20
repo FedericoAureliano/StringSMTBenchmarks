@@ -1,0 +1,3 @@
+(declare-fun var0 () String)
+(assert (RegexIn var0 (RegexConcat (RegexUnion (RegexUnion (Str2Reg "ee") (Str2Reg "f")) (RegexUnion (Str2Reg "ggg") (Str2Reg "hh"))) (RegexConcat (RegexPlus (RegexUnion (Str2Reg "ccc") (Str2Reg "dd"))) (RegexConcat (RegexStar (RegexUnion (Str2Reg "aaa") (Str2Reg "bb"))) (RegexConcat (RegexPlus (RegexUnion (Str2Reg "88") (Str2Reg "9"))) (RegexConcat (RegexPlus (RegexPlus (Str2Reg "77"))) (RegexConcat (RegexUnion (RegexUnion (Str2Reg "44") (Str2Reg "555")) (RegexPlus (Str2Reg "66"))) (RegexUnion (RegexUnion (Str2Reg "000") (Str2Reg "1")) (RegexUnion (Str2Reg "222") (Str2Reg "333")))))))))))
+(check-sat)

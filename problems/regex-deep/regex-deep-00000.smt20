@@ -1,0 +1,4 @@
+(declare-fun var0 () String)
+(assert (RegexIn var0 (RegexConcat (Str2Reg "1") (Str2Reg "000"))))
+(assert (<= 15 (Length var0)))
+(check-sat)

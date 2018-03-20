@@ -1,6 +1,3 @@
-z3
 .vscode
-kausler
-amazon
-timeout
-fuzzed
+__pycache__
+.benchmarks

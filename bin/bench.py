@@ -1,15 +1,23 @@
 #!/usr/bin/env python3
 
+TIMEOUT  = 15.0
+PROBLEMS = "../problems/**/*.smt2*"
+OUTPUT_IMAGE = "../images/cactus.svg"
+
 import os
 import sys
-import json
 import glob
 import subprocess
 import signal
 import datetime
 import signal
+import time
 
+from os.path import basename
 from collections import namedtuple
+from operator import attrgetter
+
+import pygal
 
 # constants
 SAT_RESULT = 'sat'
@@ -18,19 +26,31 @@ UNKNOWN_RESULT = 'unknown'
 TIMEOUT_RESULT = 'timeout'
 ERROR_RESULT = 'error'
 
-TIMEOUT = 15.0
+SOLVERS = {
+    "Z3seq" : "z3",
+    "Z3str" : "z3 smt.string_solver=z3str3", 
+    "CVC4"  : "cvc4 --lang smt --strings-exp",
+    "Norn"  : "norn",
+    # "Sloth" : "sloth",
+    # "S3"    : "S3"
+}
 
-DIRECTORY = "/home/fmora/workspace/StringSMTBenchmarks"
-BIN = os.path.join(DIRECTORY, 'bin')
-
-Z3 = os.path.join(DIRECTORY, "bin/z3/build/z3 ")
-SOLVERS = {"Z3str3":Z3+"smt.string_solver=z3str3 ", "CVC4":"cvc4 --lang smt --strings-exp "}
-SOLVER_ORDER = ["CVC4", "Z3str3"]
+DATA = {
+    "Z3seq" : [],
+    "Z3str" : [],
+    "CVC4"  : [],
+    "Norn"  : [],
+    # "Sloth" : [],
+    # "S3"    : []
+}
 
 # data
-Result = namedtuple('Result', ('solver', 'problem', 'elapsed', 'result', 'command'))
+Result = namedtuple('Result', ('problem', 'elapsed', 'result'))
 
 # helpers
+def plottable(result):
+    return result in [SAT_RESULT, UNSAT_RESULT]
+
 def output2result(problem, output):
     # it's important to check for unsat first, since sat
     # is a substring of unsat
@@ -41,12 +61,12 @@ def output2result(problem, output):
     if 'UNKNOWN' in output or 'unknown' in output:
         return UNKNOWN_RESULT
 
-    print(problem, ': Couldn\'t parse output', file=sys.stderr)
+    # print(problem, ': Couldn\'t parse output', file=sys.stderr)
     return ERROR_RESULT
 
 def run_problem(solver, invocation, problem):
     # pass the problem to the command
-    command = invocation + problem
+    command = "%s %s" %(invocation, problem)
     # get start time
     start = datetime.datetime.now().timestamp()
     # run command
@@ -61,7 +81,7 @@ def run_problem(solver, invocation, problem):
     try:
         process.wait(timeout=TIMEOUT)
     # if it times out ...
-    except subprocess.TimeoutExpired as e:
+    except subprocess.TimeoutExpired:
         # kill it
         print('TIMED OUT:', repr(command), '... killing', process.pid, file=sys.stderr)
         os.killpg(os.getpgid(process.pid), signal.SIGINT)
@@ -79,45 +99,35 @@ def run_problem(solver, invocation, problem):
         result = output2result(problem, stdout + stderr)
     # make result
     result = Result(
-        command=invocation + problem,
-        solver=solver,
         problem=problem,
         elapsed=elapsed,
         result=result
     )
     return result
 
-results = []
-f = ""
-
 def signal_handler(signal, frame):
-    print("HIT MEMORY BOUND! KILLING!")
-    result_dicts = [r._asdict() for r in results]
-    with open(f, 'w') as outfile:
-        json.dump(result_dicts, outfile)
+    print("KILLING!")
     sys.exit(0)
 
 def main():
-    global results
-    global f
+    global DATA
     signal.signal(signal.SIGTERM, signal_handler)
-    problems = glob.glob("*.smt2*")
-    for solver in SOLVER_ORDER:
-        if solver == "CVC4" and len(glob.glob("CVC4.json")) > 0:
-            print("CVC4 results already computed")
-            continue #already computed CVC4 results here
-        command = SOLVERS[solver]
-        f = solver+".json"
-        # run the problems
-        results = []
+    problems = glob.glob(PROBLEMS)
+    for solver, command in SOLVERS.items():
         for problem in problems:
             result = run_problem(solver, command, problem)
-            results.append(result)
-        # transform results (which are namedtuples) to dicts
-        result_dicts = [r._asdict() for r in results]
-        # print straight from JSON serialiser
-        with open(f, 'w') as outfile:
-            json.dump(result_dicts, outfile)
+            if plottable(result.result):
+                DATA[solver].append(result)
+
+    cactus = pygal.XY(stroke=False, title=time.strftime("%d/%m/%Y"), y_title="Time (s)", dots_size=3)
+    for solver, res in DATA.items():
+        points = sorted(res, key=attrgetter('elapsed'))
+        points = zip(range(len(points)), points)
+        points = [{'value': (i, p.elapsed), 'label': "%s: %s"%(basename(p.problem), p.result), 'xlink':p.problem} for (i, p) in points]
+        cactus.add(solver, points)  
+    
+    cactus.render_to_file(OUTPUT_IMAGE)
+
 
 if __name__ == '__main__':
     main()
