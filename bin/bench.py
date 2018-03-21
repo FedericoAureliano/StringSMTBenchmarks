@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
-TIMEOUT  = 15.0
-PROBLEMS = "../problems/**/*.smt2*"
-OUTPUT_IMAGE = "../images/cactus.svg"
+TIMEOUT     = 15.0
+PROBLEMS    = "../problems/**/*.smt25"
+RESULTS_DIR = "../results" 
+CSV_HEADER  = "Category,Instance,Result,Time\n"
 
 import os
 import sys
@@ -13,17 +14,14 @@ import datetime
 import signal
 import time
 
-from os.path import basename
 from collections import namedtuple
 from operator import attrgetter
-
-import pygal
 
 # constants
 SAT_RESULT = 'sat'
 UNSAT_RESULT = 'unsat'
 UNKNOWN_RESULT = 'unknown'
-TIMEOUT_RESULT = 'timeout'
+TIMEOUT_RESULT = 'timeout (%f)' % TIMEOUT
 ERROR_RESULT = 'error'
 
 SOLVERS = {
@@ -45,11 +43,7 @@ DATA = {
 }
 
 # data
-Result = namedtuple('Result', ('problem', 'elapsed', 'result'))
-
-# helpers
-def plottable(result):
-    return result in [SAT_RESULT, UNSAT_RESULT]
+Result = namedtuple('Result', ('category', 'problem', 'elapsed', 'result'))
 
 def output2result(problem, output):
     # it's important to check for unsat first, since sat
@@ -99,9 +93,10 @@ def run_problem(solver, invocation, problem):
         result = output2result(problem, stdout + stderr)
     # make result
     result = Result(
-        problem=problem,
-        elapsed=elapsed,
-        result=result
+        category = os.path.dirname(problem),
+        problem  = os.path.basename(problem),
+        result   = result,
+        elapsed  = elapsed
     )
     return result
 
@@ -116,18 +111,14 @@ def main():
     for solver, command in SOLVERS.items():
         for problem in problems:
             result = run_problem(solver, command, problem)
-            if plottable(result.result):
-                DATA[solver].append(result)
+            DATA[solver].append(result)
 
-    cactus = pygal.XY(stroke=False, title=time.strftime("%d/%m/%Y"), y_title="Time (s)", dots_size=3)
-    for solver, res in DATA.items():
-        points = sorted(res, key=attrgetter('elapsed'))
-        points = zip(range(len(points)), points)
-        points = [{'value': (i, p.elapsed), 'label': "%s: %s"%(basename(p.problem), p.result), 'xlink':p.problem} for (i, p) in points]
-        cactus.add(solver, points)  
-    
-    cactus.render_to_file(OUTPUT_IMAGE)
-
+    for solver, data in DATA.items():
+        filename = "%s/%s.csv" %(RESULTS_DIR, solver)
+        with open(filename, 'w') as fp:
+            fp.write(CSV_HEADER)
+            for point in data:
+                fp.write("%s,%s,%s,%s\n"%(point.category, point.problem, point.result, point.elapsed))
 
 if __name__ == '__main__':
     main()

@@ -1,4 +1,0 @@
-(declare-fun var0 () String)
-(declare-fun var1 () String)
-(assert (= (Concat "5SM" (Concat var0 var1)) (Concat (Concat var0 var1) "-Vo")))
-(check-sat)

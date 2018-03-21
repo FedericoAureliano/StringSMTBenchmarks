@@ -1,3 +1,0 @@
-(declare-fun var0 () String)
-(assert (RegexIn var0 (RegexPlus (RegexStar (Str2Reg "000")))))
-(check-sat)

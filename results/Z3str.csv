@@ -1,0 +1,502 @@
+Category,Instance,Result,Time
+../problems/regex-big,regex-big-00064.smt25,sat,0.5156300067901611
+../problems/regex-big,regex-big-00204.smt25,sat,5.826738119125366
+../problems/regex-big,regex-big-00092.smt25,sat,1.1667029857635498
+../problems/regex-big,regex-big-00127.smt25,sat,14.544268131256104
+../problems/regex-big,regex-big-00183.smt25,sat,3.3718669414520264
+../problems/regex-big,regex-big-00050.smt25,sat,2.4699220657348633
+../problems/regex-big,regex-big-00169.smt25,sat,4.073185920715332
+../problems/regex-big,regex-big-00106.smt25,sat,2.1691060066223145
+../problems/regex-big,regex-big-00057.smt25,sat,5.62605619430542
+../problems/regex-big,regex-big-00085.smt25,sat,0.9162728786468506
+../problems/regex-big,regex-big-00148.smt25,sat,2.3692338466644287
+../problems/regex-big,regex-big-00162.smt25,sat,2.970705032348633
+../problems/regex-big,regex-big-00099.smt25,sat,0.9663820266723633
+../problems/regex-big,regex-big-00022.smt25,sat,0.16464614868164062
+../problems/regex-big,regex-big-00001.smt25,sat,0.06437182426452637
+../problems/regex-big,regex-big-00015.smt25,sat,0.11446905136108398
+../problems/regex-big,regex-big-00197.smt25,timeout (15.000000),15.0
+../problems/regex-big,regex-big-00043.smt25,sat,0.4164390563964844
+../problems/regex-big,regex-big-00008.smt25,sat,0.11459612846374512
+../problems/regex-big,regex-big-00176.smt25,sat,4.0734031200408936
+../problems/regex-big,regex-big-00029.smt25,sat,0.8161110877990723
+../problems/regex-big,regex-big-00155.smt25,sat,4.12706995010376
+../problems/regex-big,regex-big-00113.smt25,sat,8.88285517692566
+../problems/regex-big,regex-big-00190.smt25,sat,4.925020933151245
+../problems/regex-big,regex-big-00134.smt25,sat,10.886862993240356
+../problems/regex-big,regex-big-00141.smt25,sat,3.572511911392212
+../problems/regex-big,regex-big-00120.smt25,sat,2.0193960666656494
+../problems/regex-big,regex-big-00036.smt25,sat,0.31487298011779785
+../problems/regex-big,regex-big-00078.smt25,sat,1.7178339958190918
+../problems/regex-big,regex-big-00071.smt25,sat,0.6656639575958252
+../problems/lengths-short,lengths-short-00201.smt25,sat,0.264941930770874
+../problems/lengths-short,lengths-short-00161.smt25,sat,0.264847993850708
+../problems/lengths-short,lengths-short-00186.smt25,sat,0.31499695777893066
+../problems/lengths-short,lengths-short-00116.smt25,sat,0.3151118755340576
+../problems/lengths-short,lengths-short-00021.smt25,sat,0.2648639678955078
+../problems/lengths-short,lengths-short-00241.smt25,sat,0.31503891944885254
+../problems/lengths-short,lengths-short-00026.smt25,sat,0.2647981643676758
+../problems/lengths-short,lengths-short-00121.smt25,sat,0.31503987312316895
+../problems/lengths-short,lengths-short-00071.smt25,sat,0.31490087509155273
+../problems/lengths-short,lengths-short-00211.smt25,sat,0.36508798599243164
+../problems/lengths-short,lengths-short-00011.smt25,sat,0.2147510051727295
+../problems/lengths-short,lengths-short-00031.smt25,sat,0.3150010108947754
+../problems/lengths-short,lengths-short-00231.smt25,sat,0.3149540424346924
+../problems/lengths-short,lengths-short-00171.smt25,sat,0.26484203338623047
+../problems/lengths-short,lengths-short-00096.smt25,sat,0.2648031711578369
+../problems/lengths-short,lengths-short-00106.smt25,sat,0.2648921012878418
+../problems/lengths-short,lengths-short-00226.smt25,sat,0.3159911632537842
+../problems/lengths-short,lengths-short-00061.smt25,sat,0.2648599147796631
+../problems/lengths-short,lengths-short-00191.smt25,sat,0.2649681568145752
+../problems/lengths-short,lengths-short-00101.smt25,sat,0.2648918628692627
+../problems/lengths-short,lengths-short-00166.smt25,sat,0.31545400619506836
+../problems/lengths-short,lengths-short-00176.smt25,sat,0.26485586166381836
+../problems/lengths-short,lengths-short-00091.smt25,sat,0.26479196548461914
+../problems/lengths-short,lengths-short-00001.smt25,sat,0.11452102661132812
+../problems/lengths-short,lengths-short-00076.smt25,sat,0.2654879093170166
+../problems/lengths-short,lengths-short-00216.smt25,sat,0.3149559497833252
+../problems/lengths-short,lengths-short-00136.smt25,sat,0.26484012603759766
+../problems/lengths-short,lengths-short-00066.smt25,sat,0.31491684913635254
+../problems/lengths-short,lengths-short-00181.smt25,sat,0.2647972106933594
+../problems/lengths-short,lengths-short-00016.smt25,sat,0.2648038864135742
+../problems/lengths-short,lengths-short-00146.smt25,sat,0.3149440288543701
+../problems/lengths-short,lengths-short-00221.smt25,sat,0.31508398056030273
+../problems/lengths-short,lengths-short-00246.smt25,sat,0.3149240016937256
+../problems/lengths-short,lengths-short-00131.smt25,sat,0.2647891044616699
+../problems/lengths-short,lengths-short-00196.smt25,sat,0.31497716903686523
+../problems/lengths-short,lengths-short-00041.smt25,sat,0.2648499011993408
+../problems/lengths-short,lengths-short-00156.smt25,sat,0.26485586166381836
+../problems/lengths-short,lengths-short-00046.smt25,sat,0.3149838447570801
+../problems/lengths-short,lengths-short-00126.smt25,sat,0.31513500213623047
+../problems/lengths-short,lengths-short-00141.smt25,sat,0.3150298595428467
+../problems/lengths-short,lengths-short-00036.smt25,sat,0.2648780345916748
+../problems/lengths-short,lengths-short-00151.smt25,sat,0.26484203338623047
+../problems/lengths-short,lengths-short-00056.smt25,sat,0.26482319831848145
+../problems/lengths-short,lengths-short-00051.smt25,sat,0.2649569511413574
+../problems/lengths-short,lengths-short-00111.smt25,sat,0.2649061679840088
+../problems/lengths-short,lengths-short-00006.smt25,sat,0.21509599685668945
+../problems/lengths-short,lengths-short-00081.smt25,sat,0.26482391357421875
+../problems/lengths-short,lengths-short-00206.smt25,sat,0.31552791595458984
+../problems/lengths-short,lengths-short-00086.smt25,sat,0.31493186950683594
+../problems/lengths-short,lengths-short-00236.smt25,sat,0.3148767948150635
+../problems/concats-big,concats-big-00841.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00321.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00961.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00881.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-01121.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00041.smt25,sat,1.517820119857788
+../problems/concats-big,concats-big-01041.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00601.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-01081.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00241.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00721.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00201.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00921.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00561.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00281.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00441.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00761.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00001.smt25,sat,0.06922292709350586
+../problems/concats-big,concats-big-01001.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00521.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00681.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00121.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00081.smt25,sat,3.8258211612701416
+../problems/concats-big,concats-big-00641.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00401.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00361.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00801.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00161.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-01161.smt25,timeout (15.000000),15.0
+../problems/concats-big,concats-big-00481.smt25,timeout (15.000000),15.0
+../problems/concats-small,concats-small-00001.smt25,sat,0.06540513038635254
+../problems/concats-small,concats-small-00019.smt25,sat,0.4158780574798584
+../problems/concats-small,concats-small-00043.smt25,sat,3.1212480068206787
+../problems/concats-small,concats-small-00011.smt25,sat,0.1145780086517334
+../problems/concats-small,concats-small-00005.smt25,sat,0.06442904472351074
+../problems/concats-small,concats-small-00029.smt25,sat,0.7660360336303711
+../problems/concats-small,concats-small-00006.smt25,sat,0.11448407173156738
+../problems/concats-small,concats-small-00020.smt25,sat,0.9165210723876953
+../problems/concats-small,concats-small-00037.smt25,sat,1.9184250831604004
+../problems/concats-small,concats-small-00034.smt25,sat,1.1166419982910156
+../problems/concats-small,concats-small-00039.smt25,sat,2.06872296333313
+../problems/concats-small,concats-small-00004.smt25,sat,0.06444883346557617
+../problems/concats-small,concats-small-00013.smt25,sat,0.21464109420776367
+../problems/concats-small,concats-small-00002.smt25,sat,0.06433796882629395
+../problems/concats-small,concats-small-00046.smt25,sat,0.6656949520111084
+../problems/concats-small,concats-small-00017.smt25,sat,0.36501502990722656
+../problems/concats-small,concats-small-00012.smt25,sat,0.31500697135925293
+../problems/concats-small,concats-small-00027.smt25,sat,0.7156388759613037
+../problems/concats-small,concats-small-00010.smt25,sat,0.2147531509399414
+../problems/concats-small,concats-small-00038.smt25,sat,1.2169010639190674
+../problems/concats-small,concats-small-00008.smt25,sat,0.11451888084411621
+../problems/concats-small,concats-small-00021.smt25,sat,0.3650779724121094
+../problems/concats-small,concats-small-00022.smt25,sat,0.4150509834289551
+../problems/concats-small,concats-small-00049.smt25,sat,2.7198448181152344
+../problems/concats-small,concats-small-00050.smt25,sat,1.467452049255371
+../problems/concats-small,concats-small-00033.smt25,sat,1.3675291538238525
+../problems/concats-small,concats-small-00015.smt25,sat,0.16455817222595215
+../problems/concats-small,concats-small-00028.smt25,sat,0.6165380477905273
+../problems/concats-small,concats-small-00014.smt25,sat,0.26478099822998047
+../problems/concats-small,concats-small-00003.smt25,sat,0.06435298919677734
+../problems/concats-small,concats-small-00035.smt25,sat,0.9673080444335938
+../problems/concats-small,concats-small-00044.smt25,sat,1.767942190170288
+../problems/concats-small,concats-small-00016.smt25,sat,0.214738130569458
+../problems/concats-small,concats-small-00023.smt25,sat,0.21470403671264648
+../problems/concats-small,concats-small-00047.smt25,sat,1.517331838607788
+../problems/concats-small,concats-small-00024.smt25,sat,0.8159787654876709
+../problems/concats-small,concats-small-00032.smt25,sat,1.3171658515930176
+../problems/concats-small,concats-small-00031.smt25,sat,1.0165610313415527
+../problems/concats-small,concats-small-00025.smt25,sat,0.4153268337249756
+../problems/concats-small,concats-small-00042.smt25,sat,4.524055004119873
+../problems/concats-small,concats-small-00030.smt25,sat,1.217067003250122
+../problems/concats-small,concats-small-00041.smt25,sat,1.4171879291534424
+../problems/concats-small,concats-small-00026.smt25,sat,0.31490278244018555
+../problems/concats-small,concats-small-00007.smt25,sat,0.11449193954467773
+../problems/concats-small,concats-small-00040.smt25,sat,0.3148660659790039
+../problems/concats-small,concats-small-00048.smt25,sat,2.4696080684661865
+../problems/concats-small,concats-small-00018.smt25,sat,0.41504693031311035
+../problems/concats-small,concats-small-00045.smt25,sat,2.0182018280029297
+../problems/concats-small,concats-small-00036.smt25,sat,1.3670759201049805
+../problems/concats-small,concats-small-00009.smt25,sat,0.26473498344421387
+../problems/lengths-concats,lengths-concats-00015.smt25,sat,2.469327926635742
+../problems/lengths-concats,lengths-concats-00013.smt25,sat,1.921386957168579
+../problems/lengths-concats,lengths-concats-00004.smt25,sat,0.36510491371154785
+../problems/lengths-concats,lengths-concats-00006.smt25,sat,0.6156251430511475
+../problems/lengths-concats,lengths-concats-00047.smt25,timeout (15.000000),15.0
+../problems/lengths-concats,lengths-concats-00017.smt25,sat,3.2723119258880615
+../problems/lengths-concats,lengths-concats-00026.smt25,sat,6.077342987060547
+../problems/lengths-concats,lengths-concats-00020.smt25,sat,3.972612142562866
+../problems/lengths-concats,lengths-concats-00048.smt25,timeout (15.000000),15.0
+../problems/lengths-concats,lengths-concats-00007.smt25,sat,0.8707950115203857
+../problems/lengths-concats,lengths-concats-00049.smt25,timeout (15.000000),15.0
+../problems/lengths-concats,lengths-concats-00021.smt25,sat,4.286221027374268
+../problems/lengths-concats,lengths-concats-00038.smt25,sat,11.990191221237183
+../problems/lengths-concats,lengths-concats-00023.smt25,sat,5.0246758460998535
+../problems/lengths-concats,lengths-concats-00037.smt25,sat,11.487759113311768
+../problems/lengths-concats,lengths-concats-00025.smt25,sat,6.7780821323394775
+../problems/lengths-concats,lengths-concats-00031.smt25,sat,8.531848907470703
+../problems/lengths-concats,lengths-concats-00010.smt25,sat,1.367339849472046
+../problems/lengths-concats,lengths-concats-00040.smt25,sat,13.342379093170166
+../problems/lengths-concats,lengths-concats-00050.smt25,timeout (15.000000),15.0
+../problems/lengths-concats,lengths-concats-00034.smt25,sat,11.238316059112549
+../problems/lengths-concats,lengths-concats-00008.smt25,sat,0.916438102722168
+../problems/lengths-concats,lengths-concats-00043.smt25,timeout (15.000000),15.0
+../problems/lengths-concats,lengths-concats-00044.smt25,timeout (15.000000),15.0
+../problems/lengths-concats,lengths-concats-00041.smt25,sat,13.447197914123535
+../problems/lengths-concats,lengths-concats-00019.smt25,sat,3.621725082397461
+../problems/lengths-concats,lengths-concats-00039.smt25,sat,12.541071891784668
+../problems/lengths-concats,lengths-concats-00011.smt25,sat,1.8700470924377441
+../problems/lengths-concats,lengths-concats-00035.smt25,sat,10.586201190948486
+../problems/lengths-concats,lengths-concats-00030.smt25,sat,8.081125020980835
+../problems/lengths-concats,lengths-concats-00032.smt25,sat,9.032883882522583
+../problems/lengths-concats,lengths-concats-00005.smt25,sat,0.5655169486999512
+../problems/lengths-concats,lengths-concats-00003.smt25,sat,0.26485610008239746
+../problems/lengths-concats,lengths-concats-00016.smt25,sat,2.619805097579956
+../problems/lengths-concats,lengths-concats-00033.smt25,sat,11.137845039367676
+../problems/lengths-concats,lengths-concats-00024.smt25,sat,5.5773091316223145
+../problems/lengths-concats,lengths-concats-00027.smt25,sat,7.831360816955566
+../problems/lengths-concats,lengths-concats-00045.smt25,timeout (15.000000),15.0
+../problems/lengths-concats,lengths-concats-00018.smt25,sat,3.626163959503174
+../problems/lengths-concats,lengths-concats-00009.smt25,sat,1.4176740646362305
+../problems/lengths-concats,lengths-concats-00002.smt25,sat,0.21481895446777344
+../problems/lengths-concats,lengths-concats-00046.smt25,timeout (15.000000),15.0
+../problems/lengths-concats,lengths-concats-00012.smt25,sat,1.6218500137329102
+../problems/lengths-concats,lengths-concats-00036.smt25,sat,11.788708925247192
+../problems/lengths-concats,lengths-concats-00001.smt25,sat,0.1145639419555664
+../problems/lengths-concats,lengths-concats-00028.smt25,sat,7.479357004165649
+../problems/lengths-concats,lengths-concats-00014.smt25,sat,2.369269847869873
+../problems/lengths-concats,lengths-concats-00022.smt25,sat,4.724154949188232
+../problems/lengths-concats,lengths-concats-00042.smt25,sat,14.243316888809204
+../problems/lengths-concats,lengths-concats-00029.smt25,sat,7.630012035369873
+../problems/concats-extracts-big,concats-extracts-big-00081.smt25,unsat,0.06433701515197754
+../problems/concats-extracts-big,concats-extracts-big-00921.smt25,unsat,0.11446499824523926
+../problems/concats-extracts-big,concats-extracts-big-00001.smt25,unsat,0.0644078254699707
+../problems/concats-extracts-big,concats-extracts-big-00321.smt25,unsat,0.0643460750579834
+../problems/concats-extracts-big,concats-extracts-big-00401.smt25,unsat,0.11448907852172852
+../problems/concats-extracts-big,concats-extracts-big-00201.smt25,unsat,0.06443309783935547
+../problems/concats-extracts-big,concats-extracts-big-01001.smt25,unsat,0.11451196670532227
+../problems/concats-extracts-big,concats-extracts-big-00961.smt25,unsat,0.11455893516540527
+../problems/concats-extracts-big,concats-extracts-big-01121.smt25,unsat,0.164747953414917
+../problems/concats-extracts-big,concats-extracts-big-00641.smt25,unsat,0.1144399642944336
+../problems/concats-extracts-big,concats-extracts-big-00801.smt25,unsat,0.11446619033813477
+../problems/concats-extracts-big,concats-extracts-big-00481.smt25,unsat,0.11478400230407715
+../problems/concats-extracts-big,concats-extracts-big-00281.smt25,unsat,0.06434822082519531
+../problems/concats-extracts-big,concats-extracts-big-00761.smt25,unsat,0.11447501182556152
+../problems/concats-extracts-big,concats-extracts-big-00041.smt25,unsat,0.16464710235595703
+../problems/concats-extracts-big,concats-extracts-big-01081.smt25,unsat,0.1645951271057129
+../problems/concats-extracts-big,concats-extracts-big-00561.smt25,unsat,0.11449623107910156
+../problems/concats-extracts-big,concats-extracts-big-00881.smt25,unsat,0.11452388763427734
+../problems/concats-extracts-big,concats-extracts-big-00521.smt25,unsat,0.11452293395996094
+../problems/concats-extracts-big,concats-extracts-big-00601.smt25,unsat,0.1147000789642334
+../problems/concats-extracts-big,concats-extracts-big-00841.smt25,unsat,0.11450791358947754
+../problems/concats-extracts-big,concats-extracts-big-00441.smt25,unsat,0.11447501182556152
+../problems/concats-extracts-big,concats-extracts-big-00121.smt25,unsat,0.06434297561645508
+../problems/concats-extracts-big,concats-extracts-big-00241.smt25,unsat,0.06438493728637695
+../problems/concats-extracts-big,concats-extracts-big-00361.smt25,unsat,0.11446189880371094
+../problems/concats-extracts-big,concats-extracts-big-01161.smt25,unsat,0.16455483436584473
+../problems/concats-extracts-big,concats-extracts-big-00161.smt25,unsat,0.06435799598693848
+../problems/concats-extracts-big,concats-extracts-big-00721.smt25,unsat,0.11447501182556152
+../problems/concats-extracts-big,concats-extracts-big-01041.smt25,unsat,0.1646280288696289
+../problems/concats-extracts-big,concats-extracts-big-00681.smt25,unsat,0.11443519592285156
+../problems/overlaps-small,overlaps-small-00006.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00003.smt25,unknown,7.285932779312134
+../problems/overlaps-small,overlaps-small-00017.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00008.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00025.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00001.smt25,unknown,0.06464004516601562
+../problems/overlaps-small,overlaps-small-00016.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00004.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00010.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00015.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00026.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00019.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00014.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00009.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00027.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00024.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00002.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00005.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00023.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00012.smt25,error,5.780368089675903
+../problems/overlaps-small,overlaps-small-00028.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00011.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00007.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00029.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00030.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00018.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00021.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00022.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00013.smt25,timeout (15.000000),15.0
+../problems/overlaps-small,overlaps-small-00020.smt25,timeout (15.000000),15.0
+../problems/lengths-long,lengths-long-04901.smt25,sat,1.0169529914855957
+../problems/lengths-long,lengths-long-03001.smt25,sat,0.6156401634216309
+../problems/lengths-long,lengths-long-03801.smt25,sat,1.116736888885498
+../problems/lengths-long,lengths-long-00601.smt25,sat,0.3651001453399658
+../problems/lengths-long,lengths-long-01501.smt25,sat,0.46529603004455566
+../problems/lengths-long,lengths-long-04301.smt25,sat,0.9163429737091064
+../problems/lengths-long,lengths-long-03901.smt25,sat,0.9663958549499512
+../problems/lengths-long,lengths-long-03501.smt25,sat,0.8161680698394775
+../problems/lengths-long,lengths-long-01901.smt25,sat,0.5654559135437012
+../problems/lengths-long,lengths-long-00501.smt25,sat,0.3651578426361084
+../problems/lengths-long,lengths-long-04601.smt25,sat,0.8662850856781006
+../problems/lengths-long,lengths-long-02501.smt25,sat,0.615739107131958
+../problems/lengths-long,lengths-long-04101.smt25,sat,0.8160829544067383
+../problems/lengths-long,lengths-long-03401.smt25,sat,0.6657209396362305
+../problems/lengths-long,lengths-long-03201.smt25,sat,0.7159380912780762
+../problems/lengths-long,lengths-long-00401.smt25,sat,0.36547088623046875
+../problems/lengths-long,lengths-long-01001.smt25,sat,0.4151761531829834
+../problems/lengths-long,lengths-long-04201.smt25,sat,0.8160219192504883
+../problems/lengths-long,lengths-long-02701.smt25,sat,0.6657619476318359
+../problems/lengths-long,lengths-long-00101.smt25,sat,0.2648348808288574
+../problems/lengths-long,lengths-long-03601.smt25,sat,0.7661118507385254
+../problems/lengths-long,lengths-long-02401.smt25,sat,0.6156611442565918
+../problems/lengths-long,lengths-long-01301.smt25,sat,0.46534204483032227
+../problems/lengths-long,lengths-long-00901.smt25,sat,0.41517114639282227
+../problems/lengths-long,lengths-long-02201.smt25,sat,0.6155610084533691
+../problems/lengths-long,lengths-long-00201.smt25,sat,0.31493401527404785
+../problems/lengths-long,lengths-long-02101.smt25,sat,0.5671989917755127
+../problems/lengths-long,lengths-long-02901.smt25,sat,0.6657900810241699
+../problems/lengths-long,lengths-long-01201.smt25,sat,0.4652829170227051
+../problems/lengths-long,lengths-long-04001.smt25,sat,0.8660919666290283
+../problems/lengths-long,lengths-long-01101.smt25,sat,0.4152088165283203
+../problems/lengths-long,lengths-long-04401.smt25,sat,0.8160960674285889
+../problems/lengths-long,lengths-long-00701.smt25,sat,0.3652071952819824
+../problems/lengths-long,lengths-long-02601.smt25,sat,0.7159450054168701
+../problems/lengths-long,lengths-long-03101.smt25,sat,0.7160129547119141
+../problems/lengths-long,lengths-long-00001.smt25,sat,0.11454892158508301
+../problems/lengths-long,lengths-long-02301.smt25,sat,0.5654909610748291
+../problems/lengths-long,lengths-long-04501.smt25,sat,0.8665280342102051
+../problems/lengths-long,lengths-long-02801.smt25,sat,0.8661642074584961
+../problems/lengths-long,lengths-long-04701.smt25,sat,0.9163389205932617
+../problems/lengths-long,lengths-long-04801.smt25,sat,0.9665031433105469
+../problems/lengths-long,lengths-long-03301.smt25,sat,0.715886116027832
+../problems/lengths-long,lengths-long-03701.smt25,sat,0.8161640167236328
+../problems/lengths-long,lengths-long-01601.smt25,sat,0.5153520107269287
+../problems/lengths-long,lengths-long-00301.smt25,sat,0.314985990524292
+../problems/lengths-long,lengths-long-01701.smt25,sat,0.5655460357666016
+../problems/lengths-long,lengths-long-01801.smt25,sat,0.5155000686645508
+../problems/lengths-long,lengths-long-00801.smt25,sat,0.41513490676879883
+../problems/lengths-long,lengths-long-02001.smt25,sat,0.6158139705657959
+../problems/lengths-long,lengths-long-01401.smt25,sat,0.46535611152648926
+../problems/regex-small,regex-small-00045.smt25,sat,0.3148839473724365
+../problems/regex-small,regex-small-00031.smt25,sat,0.36508893966674805
+../problems/regex-small,regex-small-00007.smt25,sat,0.11446499824523926
+../problems/regex-small,regex-small-00001.smt25,sat,0.0644378662109375
+../problems/regex-small,regex-small-00037.smt25,sat,0.3149569034576416
+../problems/regex-small,regex-small-00005.smt25,sat,0.06441998481750488
+../problems/regex-small,regex-small-00039.smt25,sat,0.21473193168640137
+../problems/regex-small,regex-small-00029.smt25,sat,0.21478581428527832
+../problems/regex-small,regex-small-00035.smt25,sat,0.26489806175231934
+../problems/regex-small,regex-small-00023.smt25,sat,0.2648658752441406
+../problems/regex-small,regex-small-00055.smt25,sat,0.5155091285705566
+../problems/regex-small,regex-small-00017.smt25,sat,0.26490187644958496
+../problems/regex-small,regex-small-00051.smt25,sat,0.31494712829589844
+../problems/regex-small,regex-small-00015.smt25,sat,0.11461997032165527
+../problems/regex-small,regex-small-00057.smt25,sat,0.7659571170806885
+../problems/regex-small,regex-small-00043.smt25,sat,0.264819860458374
+../problems/regex-small,regex-small-00047.smt25,sat,0.3149571418762207
+../problems/regex-small,regex-small-00041.smt25,sat,0.715749979019165
+../problems/regex-small,regex-small-00021.smt25,sat,0.16464900970458984
+../problems/regex-small,regex-small-00003.smt25,sat,0.06446290016174316
+../problems/regex-small,regex-small-00009.smt25,sat,0.11454606056213379
+../problems/regex-small,regex-small-00019.smt25,sat,0.1646111011505127
+../problems/regex-small,regex-small-00013.smt25,sat,0.11449098587036133
+../problems/regex-small,regex-small-00033.smt25,sat,0.16468191146850586
+../problems/regex-small,regex-small-00027.smt25,sat,0.16464495658874512
+../problems/regex-small,regex-small-00011.smt25,sat,0.11451506614685059
+../problems/regex-small,regex-small-00059.smt25,sat,0.5654611587524414
+../problems/regex-small,regex-small-00025.smt25,sat,0.2147519588470459
+../problems/regex-small,regex-small-00053.smt25,sat,0.3650369644165039
+../problems/regex-small,regex-small-00049.smt25,sat,0.8661818504333496
+../problems/regex-lengths,regex-lengths-00301.smt25,sat,5.6768128871917725
+../problems/regex-lengths,regex-lengths-00326.smt25,sat,10.838206052780151
+../problems/regex-lengths,regex-lengths-00026.smt25,sat,0.21470308303833008
+../problems/regex-lengths,regex-lengths-00276.smt25,timeout (15.000000),15.0
+../problems/regex-lengths,regex-lengths-00051.smt25,sat,0.41852402687072754
+../problems/regex-lengths,regex-lengths-00476.smt25,timeout (15.000000),15.0
+../problems/regex-lengths,regex-lengths-00151.smt25,sat,2.3727169036865234
+../problems/regex-lengths,regex-lengths-00176.smt25,sat,2.4197139739990234
+../problems/regex-lengths,regex-lengths-00451.smt25,sat,14.34593915939331
+../problems/regex-lengths,regex-lengths-00001.smt25,sat,0.11453914642333984
+../problems/regex-lengths,regex-lengths-00201.smt25,sat,3.0206780433654785
+../problems/regex-lengths,regex-lengths-00076.smt25,sat,0.8660991191864014
+../problems/regex-lengths,regex-lengths-00401.smt25,sat,11.990541219711304
+../problems/regex-lengths,regex-lengths-00101.smt25,sat,0.9663779735565186
+../problems/regex-lengths,regex-lengths-00426.smt25,timeout (15.000000),15.0
+../problems/regex-lengths,regex-lengths-00351.smt25,timeout (15.000000),15.0
+../problems/regex-lengths,regex-lengths-00251.smt25,sat,4.1779279708862305
+../problems/regex-lengths,regex-lengths-00126.smt25,sat,1.2671549320220947
+../problems/regex-lengths,regex-lengths-00226.smt25,timeout (15.000000),15.0
+../problems/regex-lengths,regex-lengths-00376.smt25,sat,12.19130802154541
+../problems/regex-deep,regex-deep-00000.smt25,unsat,0.06457901000976562
+../problems/regex-deep,regex-deep-00006.smt25,sat,0.1646862030029297
+../problems/regex-deep,regex-deep-00005.smt25,sat,0.11449384689331055
+../problems/regex-deep,regex-deep-00014.smt25,timeout (15.000000),15.0
+../problems/regex-deep,regex-deep-00002.smt25,sat,0.1189119815826416
+../problems/regex-deep,regex-deep-00007.smt25,sat,0.3659360408782959
+../problems/regex-deep,regex-deep-00015.smt25,timeout (15.000000),15.0
+../problems/regex-deep,regex-deep-00012.smt25,sat,9.38147783279419
+../problems/regex-deep,regex-deep-00001.smt25,sat,0.21457195281982422
+../problems/regex-deep,regex-deep-00009.smt25,sat,5.272917985916138
+../problems/regex-deep,regex-deep-00016.smt25,timeout (15.000000),15.0
+../problems/regex-deep,regex-deep-00004.smt25,sat,0.269183874130249
+../problems/regex-deep,regex-deep-00017.smt25,timeout (15.000000),15.0
+../problems/regex-deep,regex-deep-00011.smt25,sat,10.69467306137085
+../problems/regex-deep,regex-deep-00020.smt25,timeout (15.000000),15.0
+../problems/regex-deep,regex-deep-00010.smt25,sat,13.948523998260498
+../problems/regex-deep,regex-deep-00008.smt25,sat,1.7274789810180664
+../problems/regex-deep,regex-deep-00003.smt25,sat,0.1747591495513916
+../problems/regex-deep,regex-deep-00018.smt25,timeout (15.000000),15.0
+../problems/regex-deep,regex-deep-00013.smt25,timeout (15.000000),15.0
+../problems/regex-deep,regex-deep-00019.smt25,timeout (15.000000),15.0
+../problems/concats-extracts-small,concats-extracts-small-00027.smt25,unsat,0.2676270008087158
+../problems/concats-extracts-small,concats-extracts-small-00038.smt25,unsat,0.3416299819946289
+../problems/concats-extracts-small,concats-extracts-small-00049.smt25,unsat,0.12743282318115234
+../problems/concats-extracts-small,concats-extracts-small-00031.smt25,unsat,0.2740621566772461
+../problems/concats-extracts-small,concats-extracts-small-00043.smt25,unsat,0.12993097305297852
+../problems/concats-extracts-small,concats-extracts-small-00012.smt25,unsat,0.22374200820922852
+../problems/concats-extracts-small,concats-extracts-small-00034.smt25,unsat,0.12767696380615234
+../problems/concats-extracts-small,concats-extracts-small-00005.smt25,unsat,0.17418694496154785
+../problems/concats-extracts-small,concats-extracts-small-00020.smt25,unsat,0.22573590278625488
+../problems/concats-extracts-small,concats-extracts-small-00007.smt25,unsat,0.17381501197814941
+../problems/concats-extracts-small,concats-extracts-small-00001.smt25,unsat,0.17198491096496582
+../problems/concats-extracts-small,concats-extracts-small-00047.smt25,unsat,0.38004398345947266
+../problems/concats-extracts-small,concats-extracts-small-00030.smt25,unsat,0.12158799171447754
+../problems/concats-extracts-small,concats-extracts-small-00029.smt25,unsat,0.27791905403137207
+../problems/concats-extracts-small,concats-extracts-small-00014.smt25,unsat,0.22576093673706055
+../problems/concats-extracts-small,concats-extracts-small-00035.smt25,unsat,0.12366509437561035
+../problems/concats-extracts-small,concats-extracts-small-00021.smt25,unsat,0.27843213081359863
+../problems/concats-extracts-small,concats-extracts-small-00009.smt25,unsat,0.12057781219482422
+../problems/concats-extracts-small,concats-extracts-small-00002.smt25,unsat,0.1826801300048828
+../problems/concats-extracts-small,concats-extracts-small-00033.smt25,unsat,0.12196707725524902
+../problems/concats-extracts-small,concats-extracts-small-00044.smt25,unsat,0.37027907371520996
+../problems/concats-extracts-small,concats-extracts-small-00008.smt25,unsat,0.17150592803955078
+../problems/concats-extracts-small,concats-extracts-small-00026.smt25,unsat,0.23374104499816895
+../problems/concats-extracts-small,concats-extracts-small-00004.smt25,unsat,0.17805814743041992
+../problems/concats-extracts-small,concats-extracts-small-00040.smt25,unsat,0.1255040168762207
+../problems/concats-extracts-small,concats-extracts-small-00046.smt25,unsat,0.4283740520477295
+../problems/concats-extracts-small,concats-extracts-small-00045.smt25,unsat,0.37392687797546387
+../problems/concats-extracts-small,concats-extracts-small-00036.smt25,unsat,0.12515592575073242
+../problems/concats-extracts-small,concats-extracts-small-00023.smt25,unsat,0.27809596061706543
+../problems/concats-extracts-small,concats-extracts-small-00037.smt25,unsat,0.376068115234375
+../problems/concats-extracts-small,concats-extracts-small-00018.smt25,unsat,0.17952895164489746
+../problems/concats-extracts-small,concats-extracts-small-00042.smt25,unsat,0.37239503860473633
+../problems/concats-extracts-small,concats-extracts-small-00039.smt25,unsat,0.3255879878997803
+../problems/concats-extracts-small,concats-extracts-small-00011.smt25,unsat,0.16990089416503906
+../problems/concats-extracts-small,concats-extracts-small-00024.smt25,unsat,0.27970194816589355
+../problems/concats-extracts-small,concats-extracts-small-00022.smt25,unsat,0.27205801010131836
+../problems/concats-extracts-small,concats-extracts-small-00013.smt25,unsat,0.22175312042236328
+../problems/concats-extracts-small,concats-extracts-small-00050.smt25,unsat,0.12346982955932617
+../problems/concats-extracts-small,concats-extracts-small-00010.smt25,unsat,0.21953105926513672
+../problems/concats-extracts-small,concats-extracts-small-00028.smt25,unsat,0.27069711685180664
+../problems/concats-extracts-small,concats-extracts-small-00041.smt25,unsat,0.12153410911560059
+../problems/concats-extracts-small,concats-extracts-small-00048.smt25,unsat,0.11984992027282715
+../problems/concats-extracts-small,concats-extracts-small-00016.smt25,unsat,0.2738490104675293
+../problems/concats-extracts-small,concats-extracts-small-00025.smt25,unsat,0.27595996856689453
+../problems/concats-extracts-small,concats-extracts-small-00017.smt25,unsat,0.22570109367370605
+../problems/concats-extracts-small,concats-extracts-small-00006.smt25,unsat,0.16994190216064453
+../problems/concats-extracts-small,concats-extracts-small-00003.smt25,unsat,0.22196602821350098
+../problems/concats-extracts-small,concats-extracts-small-00015.smt25,unsat,0.22385287284851074
+../problems/concats-extracts-small,concats-extracts-small-00019.smt25,unsat,0.2736499309539795
+../problems/concats-extracts-small,concats-extracts-small-00032.smt25,unsat,0.12412595748901367
+../problems/concats-balanced,concats-balanced-00009.smt25,timeout (15.000000),15.0
+../problems/concats-balanced,concats-balanced-00002.smt25,sat,0.11831498146057129
+../problems/concats-balanced,concats-balanced-00006.smt25,timeout (15.000000),15.0
+../problems/concats-balanced,concats-balanced-00008.smt25,timeout (15.000000),15.0
+../problems/concats-balanced,concats-balanced-00004.smt25,sat,1.0285758972167969
+../problems/concats-balanced,concats-balanced-00005.smt25,timeout (15.000000),15.0
+../problems/concats-balanced,concats-balanced-00001.smt25,sat,0.11734819412231445
+../problems/concats-balanced,concats-balanced-00003.smt25,sat,0.32782602310180664
+../problems/concats-balanced,concats-balanced-00010.smt25,timeout (15.000000),15.0
+../problems/concats-balanced,concats-balanced-00007.smt25,timeout (15.000000),15.0
+../problems/many-regexes,many-regexes-00013.smt25,unsat,6.139490127563477
+../problems/many-regexes,many-regexes-00007.smt25,unsat,4.591412782669067
+../problems/many-regexes,many-regexes-00016.smt25,timeout (15.000000),15.0
+../problems/many-regexes,many-regexes-00010.smt25,timeout (15.000000),15.0
+../problems/many-regexes,many-regexes-00002.smt25,unsat,2.9464681148529053
+../problems/many-regexes,many-regexes-00020.smt25,unsat,9.480370044708252
+../problems/many-regexes,many-regexes-00014.smt25,unsat,3.370074987411499
+../problems/many-regexes,many-regexes-00019.smt25,timeout (15.000000),15.0
+../problems/many-regexes,many-regexes-00018.smt25,unsat,6.391237020492554
+../problems/many-regexes,many-regexes-00003.smt25,unsat,2.067919969558716
+../problems/many-regexes,many-regexes-00009.smt25,unsat,7.130785942077637
+../problems/many-regexes,many-regexes-00012.smt25,unsat,6.98119592666626
+../problems/many-regexes,many-regexes-00011.smt25,unsat,3.6228411197662354
+../problems/many-regexes,many-regexes-00004.smt25,unsat,5.77921199798584
+../problems/many-regexes,many-regexes-00001.smt25,sat,0.11458802223205566
+../problems/many-regexes,many-regexes-00008.smt25,unsat,2.2696471214294434
+../problems/many-regexes,many-regexes-00006.smt25,unsat,0.6658761501312256
+../problems/many-regexes,many-regexes-00017.smt25,unsat,4.528033971786499
+../problems/many-regexes,many-regexes-00005.smt25,unsat,0.8662130832672119
+../problems/many-regexes,many-regexes-00015.smt25,unsat,10.739978075027466
+../problems/overlaps-big,overlaps-big-00106.smt25,timeout (15.000000),15.0
+../problems/overlaps-big,overlaps-big-00031.smt25,timeout (15.000000),15.0
+../problems/overlaps-big,overlaps-big-00046.smt25,timeout (15.000000),15.0
+../problems/overlaps-big,overlaps-big-00076.smt25,timeout (15.000000),15.0
+../problems/overlaps-big,overlaps-big-00001.smt25,unknown,0.0684819221496582
+../problems/overlaps-big,overlaps-big-00061.smt25,timeout (15.000000),15.0
+../problems/overlaps-big,overlaps-big-00121.smt25,timeout (15.000000),15.0
+../problems/overlaps-big,overlaps-big-00091.smt25,timeout (15.000000),15.0
+../problems/overlaps-big,overlaps-big-00016.smt25,timeout (15.000000),15.0
+../problems/overlaps-big,overlaps-big-00136.smt25,timeout (15.000000),15.0
+../problems/regex-pair,regex-pair-00051.smt25,sat,2.6736271381378174
+../problems/regex-pair,regex-pair-00091.smt25,sat,2.369184970855713
+../problems/regex-pair,regex-pair-00036.smt25,sat,0.5654871463775635
+../problems/regex-pair,regex-pair-00026.smt25,sat,0.2648739814758301
+../problems/regex-pair,regex-pair-00086.smt25,sat,1.5678188800811768
+../problems/regex-pair,regex-pair-00046.smt25,sat,0.5654280185699463
+../problems/regex-pair,regex-pair-00021.smt25,sat,0.26483893394470215
+../problems/regex-pair,regex-pair-00061.smt25,sat,3.0709729194641113
+../problems/regex-pair,regex-pair-00006.smt25,sat,0.11451601982116699
+../problems/regex-pair,regex-pair-00056.smt25,sat,3.4224581718444824
+../problems/regex-pair,regex-pair-00096.smt25,sat,1.8180851936340332
+../problems/regex-pair,regex-pair-00076.smt25,sat,1.1165390014648438
+../problems/regex-pair,regex-pair-00071.smt25,sat,1.5175888538360596
+../problems/regex-pair,regex-pair-00001.smt25,sat,0.06433486938476562
+../problems/regex-pair,regex-pair-00031.smt25,sat,0.31499814987182617
+../problems/regex-pair,regex-pair-00016.smt25,sat,0.1646721363067627
+../problems/regex-pair,regex-pair-00011.smt25,sat,0.11445808410644531
+../problems/regex-pair,regex-pair-00041.smt25,sat,0.5153369903564453
+../problems/regex-pair,regex-pair-00081.smt25,sat,1.4673068523406982
+../problems/regex-pair,regex-pair-00066.smt25,sat,1.0164918899536133

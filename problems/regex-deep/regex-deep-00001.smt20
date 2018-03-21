@@ -1,4 +1,0 @@
-(declare-fun var0 () String)
-(assert (RegexIn var0 (RegexConcat (RegexPlus (Str2Reg "11")) (RegexStar (Str2Reg "00")))))
-(assert (<= 15 (Length var0)))
-(check-sat)
