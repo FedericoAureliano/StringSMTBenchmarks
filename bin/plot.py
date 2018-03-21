@@ -55,7 +55,7 @@ def get_cactus(data, title):
     for solver, points in data.items():
         points = [p for p in sorted(points, key=lambda x: x[-1]) if sat_unsat(p)]
         points = zip(range(len(points)), points)
-        points = [{'value': (i, p[-1]), 'label': "%s: %s"%(p[1], p[-1]), 'xlink':"%s/%s"%(p[0], p[1])} for (i, p) in points]
+        points = [{'value': (i, p[-1]), 'label': "%s: %s"%(p[1], p[-2]), 'xlink':"%s/%s"%(p[0], p[1])} for (i, p) in points]
         cactus.add(solver, points)
     return cactus
 
