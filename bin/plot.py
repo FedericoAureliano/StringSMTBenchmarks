@@ -4,10 +4,36 @@ RESULTS = "../results/*.csv"
 IMAGE_DIR = "../images"
 
 import pygal
+from pygal.style import Style
+
 import glob
 import os
 import time
 import csv
+
+
+class CustomStyle(Style):
+
+    """A light style with strong colors"""
+
+    background = '#FFFFFF'
+    plot_background = '#FFFFFF'
+    foreground = '#000000'
+    foreground_strong = '#000000'
+    foreground_subtle = '#828282'
+    opacity = '.8'
+    opacity_hover = '.9'
+    transition = '100ms'
+    colors = ('#FFD000', '#345995', '#01A337', '#ED2B1A')
+
+    label_font_size = 18
+    major_label_font_size = 20
+    value_font_size = 22
+    value_label_font_size = 20
+    tooltip_font_size = 20
+    title_font_size = 24
+    legend_font_size = 20
+    no_data_font_size = 64
 
 # helpers
 def sat(point):
@@ -43,15 +69,15 @@ def get_category_data(data):
     return category_data
 
 def plot_cacti(data):
-    overall = get_cactus(data, "Overall Cactus (%s)" %(time.strftime("%d/%m/%Y")))
+    overall = get_cactus(data, "SAT/UNSAT Cactus: Overall (%s)" %(time.strftime("%d/%m/%Y")))
     overall.render_to_file("%s/%s"%(IMAGE_DIR, "overall_cactus.svg"))
     category_data = get_category_data(data)
     for category, cat_data in category_data.items():
-        cactus = get_cactus(cat_data, "%s Cactus (%s)" %(category.upper(), time.strftime("%d/%m/%Y")))
+        cactus = get_cactus(cat_data, "SAT/UNSAT Cactus: %s" %(category.upper()))
         cactus.render_to_file("%s/%s"%(IMAGE_DIR, "%s_cactus.svg" % category))
 
 def get_cactus(data, title):
-    cactus = pygal.XY(stroke=False, title=title, y_title="Time (s)", dots_size=5, tooltip_border_radius=10)
+    cactus = pygal.XY(stroke=False, title=title, y_title="Time (s)", dots_size=5, tooltip_border_radius=10, style=CustomStyle, legend_at_bottom=True, legend_at_bottom_columns=4)
     for solver, points in data.items():
         points = [p for p in sorted(points, key=lambda x: x[-1]) if sat_unsat(p)]
         points = zip(range(len(points)), points)
@@ -60,15 +86,15 @@ def get_cactus(data, title):
     return cactus
 
 def plot_bars(data):
-    overall = get_bar(data, "Overall Bar (%s)" %(time.strftime("%d/%m/%Y")))
+    overall = get_bar(data, "Result Distribution: Overall (%s)" %(time.strftime("%d/%m/%Y")))
     overall.render_to_file("%s/%s"%(IMAGE_DIR, "overall_bar.svg"))
     category_data = get_category_data(data)
     for category, cat_data in category_data.items():
-        bar = get_bar(cat_data, "%s Bar (%s)" %(category.upper(), time.strftime("%d/%m/%Y")))
+        bar = get_bar(cat_data, "Result Distribution: %s" %(category.upper()))
         bar.render_to_file("%s/%s"%(IMAGE_DIR, "%s_bar.svg" % category))
 
 def get_bar(data, title):
-    overall = pygal.Bar(title=title, y_title="Number of Instances", tooltip_border_radius=10)
+    overall = pygal.Bar(title=title, tooltip_border_radius=10, style=CustomStyle, legend_at_bottom=True, legend_at_bottom_columns=4)
     overall.x_labels = ["SAT", "UNSAT", "UNKNOWN", "TIMEOUT", "ERROR"]
     totals = {}
     for solver, points in data.items():
