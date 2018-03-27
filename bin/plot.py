@@ -11,11 +11,8 @@ import os
 import time
 import csv
 
-
 class CustomStyle(Style):
-
     """A light style with strong colors"""
-
     background = '#FFFFFF'
     plot_background = '#FFFFFF'
     foreground = '#000000'

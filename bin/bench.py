@@ -1,10 +1,4 @@
 #!/usr/bin/env python3
-
-TIMEOUT     = 15.0
-PROBLEMS    = "../problems/**/*.smt25"
-RESULTS_DIR = "../results" 
-CSV_HEADER  = "Category,Instance,Result,Time\n"
-
 import os
 import sys
 import glob
@@ -17,11 +11,20 @@ import time
 from collections import namedtuple
 from operator import attrgetter
 
+# arguments
+TIMEOUT     = 15.0
+PROBLEMS    = "../problems/**/*.smt25"
+RESULTS_DIR = "../results"
+
+# data
+CSV_HEADER  = "Category,Instance,Result,Time\n"
+Result = namedtuple('Result', ('category', 'problem', 'elapsed', 'result'))
+
 # constants
 SAT_RESULT = 'sat'
 UNSAT_RESULT = 'unsat'
 UNKNOWN_RESULT = 'unknown'
-TIMEOUT_RESULT = 'timeout (%f)' % TIMEOUT
+TIMEOUT_RESULT = 'timeout (%.1f s)' % TIMEOUT
 ERROR_RESULT = 'error'
 
 SOLVERS = {
@@ -32,18 +35,10 @@ SOLVERS = {
     # "Sloth" : "sloth",
     # "S3"    : "S3"
 }
+DATA = {}
+for solver in SOLVERS.keys():
+    DATA[solver] = []
 
-DATA = {
-    "Z3seq" : [],
-    "Z3str" : [],
-    "CVC4"  : [],
-    "Norn"  : [],
-    # "Sloth" : [],
-    # "S3"    : []
-}
-
-# data
-Result = namedtuple('Result', ('category', 'problem', 'elapsed', 'result'))
 
 def output2result(problem, output):
     # it's important to check for unsat first, since sat
@@ -88,8 +83,8 @@ def run_problem(solver, invocation, problem):
         end     = datetime.datetime.now().timestamp()
         elapsed = end - start
         # get result
-        stdout = process.stdout.read().decode('utf-8')
-        stderr = process.stderr.read().decode('utf-8')
+        stdout = process.stdout.read().decode("utf-8", "ignore")
+        stderr = process.stderr.read().decode("utf-8", "ignore")
         result = output2result(problem, stdout + stderr)
     # make result
     result = Result(
@@ -118,6 +113,7 @@ def main():
         with open(filename, 'w') as fp:
             fp.write(CSV_HEADER)
             for point in data:
+                # Same order as CSV_HEADER
                 fp.write("%s,%s,%s,%s\n"%(point.category, point.problem, point.result, point.elapsed))
 
 if __name__ == '__main__':

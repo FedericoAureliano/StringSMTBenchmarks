@@ -2,3 +2,4 @@
 __pycache__
 .benchmarks
 .z3-trace
+.DS_Store
