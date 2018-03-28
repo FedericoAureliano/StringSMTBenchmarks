@@ -30,8 +30,8 @@ ERROR_RESULT = 'error'
 SOLVERS = {
     "Z3seq" : "z3",
     "Z3str" : "z3 smt.string_solver=z3str3", 
-    "CVC4"  : "cvc4 --lang smt --strings-exp",
-    "Norn"  : "norn",
+    "CVC4"  : "cvc4 --lang smt --strings-exp --produce-models",
+    "Norn"  : "norn +model",
     # "Sloth" : "sloth",
     # "S3"    : "S3"
 }
