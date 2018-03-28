@@ -112,6 +112,29 @@ def get_bar(data, title):
         overall.add(solver, vals)
     return overall
 
+def plot_time_for_model(data):
+    solver_data = {}
+    for solver, points in data.items():
+        if solver not in solver_data:
+            solver_data[solver] = []
+        for psat in points:
+            if psat[2] == "sat":
+                if "model" not in psat[1]:
+                    category = psat[0]
+                    name = psat[1][:-len(".smt25")]+ "-model.smt25"
+                    tsat = psat[-1]
+                    for pmodel in points:
+                        if pmodel[1] == name:
+                            tmodel = pmodel[-1]
+                            solver_data[solver].append([tsat, tmodel, category, name])
+                            break
+
+    cactus = pygal.XY(stroke=False, title="Model Construction", x_title="Without (s)", y_title="With (s)", dots_size=5, tooltip_border_radius=10, style=CustomStyle)
+    for solver, points in solver_data.items():
+        points = [{'value': (p[0], p[1]), 'label': p[-1], 'xlink':"%s/%s"%(p[2], p[3])} for p in points]
+        cactus.add(solver, points)
+    cactus.render_to_file("%s/%s"%(IMAGE_DIR, "models_dots.svg"))
+
 def main():
     points = {}
     result_files = glob.glob(RESULTS)
@@ -129,6 +152,7 @@ def main():
     
     plot_cacti(points)
     plot_bars(points)
+    plot_time_for_model(points)
     
 if __name__ == '__main__':
     main()
