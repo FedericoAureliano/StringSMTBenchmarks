@@ -53,7 +53,7 @@ def sat_unsat(point):
 
 def get_category_data(data):
     category_data = {}
-    for solver, points in data.items():
+    for solver, points in sorted(data.items()):
         for point in points:
             cat = point[0].rsplit('/', 1)[-1]
             if cat in category_data:
@@ -69,13 +69,13 @@ def plot_cacti(data):
     overall = get_cactus(data, "SAT/UNSAT Cactus: Overall (%s)" %(time.strftime("%d/%m/%Y")))
     overall.render_to_file("%s/%s"%(IMAGE_DIR, "overall_cactus.svg"))
     category_data = get_category_data(data)
-    for category, cat_data in category_data.items():
+    for category, cat_data in sorted(category_data.items()):
         cactus = get_cactus(cat_data, "SAT/UNSAT Cactus: %s" %(category.upper()))
         cactus.render_to_file("%s/%s"%(IMAGE_DIR, "%s_cactus.svg" % category))
 
 def get_cactus(data, title):
     cactus = pygal.XY(stroke=False, title=title, y_title="Time (s)", dots_size=5, tooltip_border_radius=10, style=CustomStyle, legend_at_bottom=True, legend_at_bottom_columns=4)
-    for solver, points in data.items():
+    for solver, points in sorted(data.items()):
         points = [p for p in sorted(points, key=lambda x: x[-1]) if sat_unsat(p)]
         points = zip(range(len(points)), points)
         points = [{'value': (i, p[-1]), 'label': "%s: %s"%(p[1], p[-2]), 'xlink':"%s/%s"%(p[0], p[1])} for (i, p) in points]
@@ -86,7 +86,7 @@ def plot_bars(data):
     overall = get_bar(data, "Result Distribution: Overall (%s)" %(time.strftime("%d/%m/%Y")))
     overall.render_to_file("%s/%s"%(IMAGE_DIR, "overall_bar.svg"))
     category_data = get_category_data(data)
-    for category, cat_data in category_data.items():
+    for category, cat_data in sorted(category_data.items()):
         bar = get_bar(cat_data, "Result Distribution: %s" %(category.upper()))
         bar.render_to_file("%s/%s"%(IMAGE_DIR, "%s_bar.svg" % category))
 
@@ -94,7 +94,7 @@ def get_bar(data, title):
     overall = pygal.Bar(title=title, tooltip_border_radius=10, style=CustomStyle, legend_at_bottom=True, legend_at_bottom_columns=4)
     overall.x_labels = ["SAT", "UNSAT", "UNKNOWN", "TIMEOUT", "ERROR"]
     totals = {}
-    for solver, points in data.items():
+    for solver, points in sorted(data.items()):
         if solver not in totals:
             totals[solver] = [0,0,0,0,0]
         for point in points:
@@ -108,13 +108,13 @@ def get_bar(data, title):
                 totals[solver][3] += 1
             elif error(point):
                 totals[solver][4] += 1
-    for solver, vals in totals.items():
+    for solver, vals in sorted(totals.items()):
         overall.add(solver, vals)
     return overall
 
 def plot_time_for_model(data):
     solver_data = {}
-    for solver, points in data.items():
+    for solver, points in sorted(data.items()):
         if solver not in solver_data:
             solver_data[solver] = []
         for psat in points:
@@ -130,14 +130,14 @@ def plot_time_for_model(data):
                             break
 
     cactus = pygal.XY(stroke=False, title="Get-Sat Vs. Get-Model by Instance", x_title="Get-Sat (s)", y_title="Get-Model (s)", dots_size=5, tooltip_border_radius=10, style=CustomStyle, legend_at_bottom=True, legend_at_bottom_columns=4)
-    for solver, points in solver_data.items():
+    for solver, points in sorted(solver_data.items()):
         points = [{'value': (p[0], p[1]), 'label': p[-1], 'xlink':"%s/%s"%(p[2], p[3])} for p in points]
         cactus.add(solver, points)
     cactus.render_to_file("%s/%s"%(IMAGE_DIR, "models_dots.svg"))
 
     overall = pygal.Bar(title="Get-Sat Vs. Get-Model Average", y_title="Time (s)", tooltip_border_radius=10, style=CustomStyle, legend_at_bottom=True, legend_at_bottom_columns=4)
     overall.x_labels = ["Get-Sat", "Get-Model"]
-    for solver, points in solver_data.items():
+    for solver, points in sorted(solver_data.items()):
         number = len(points)
         tsat = sum([p[0] for p in points])/float(number)
         tmodel = sum([p[1] for p in points])/float(number)
