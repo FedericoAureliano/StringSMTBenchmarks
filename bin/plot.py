@@ -100,13 +100,13 @@ def get_bar(data, title):
         for point in points:
             if sat(point):
                 totals[solver][0] += 1
-            if unsat(point):
+            elif unsat(point):
                 totals[solver][1] += 1
-            if unknown(point):
+            elif unknown(point):
                 totals[solver][2] += 1
-            if timeout(point):
+            elif timeout(point):
                 totals[solver][3] += 1
-            if error(point):
+            elif error(point):
                 totals[solver][4] += 1
     for solver, vals in totals.items():
         overall.add(solver, vals)
@@ -129,11 +129,20 @@ def plot_time_for_model(data):
                             solver_data[solver].append([tsat, tmodel, category, name])
                             break
 
-    cactus = pygal.XY(stroke=False, title="Model Construction", x_title="Without (s)", y_title="With (s)", dots_size=5, tooltip_border_radius=10, style=CustomStyle)
+    cactus = pygal.XY(stroke=False, title="Get-Sat Vs. Get-Model by Instance", x_title="Get-Sat (s)", y_title="Get-Model (s)", dots_size=5, tooltip_border_radius=10, style=CustomStyle, legend_at_bottom=True, legend_at_bottom_columns=4)
     for solver, points in solver_data.items():
         points = [{'value': (p[0], p[1]), 'label': p[-1], 'xlink':"%s/%s"%(p[2], p[3])} for p in points]
         cactus.add(solver, points)
     cactus.render_to_file("%s/%s"%(IMAGE_DIR, "models_dots.svg"))
+
+    overall = pygal.Bar(title="Get-Sat Vs. Get-Model Average", y_title="Time (s)", tooltip_border_radius=10, style=CustomStyle, legend_at_bottom=True, legend_at_bottom_columns=4)
+    overall.x_labels = ["Get-Sat", "Get-Model"]
+    for solver, points in solver_data.items():
+        number = len(points)
+        tsat = sum([p[0] for p in points])/float(number)
+        tmodel = sum([p[1] for p in points])/float(number)
+        overall.add(solver, [tsat, tmodel])
+    overall.render_to_file("%s/%s"%(IMAGE_DIR, "models_bars.svg"))
 
 def main():
     points = {}
