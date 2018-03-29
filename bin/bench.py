@@ -12,7 +12,7 @@ from collections import namedtuple
 from operator import attrgetter
 
 # arguments
-TIMEOUT     = 15.0
+TIMEOUT     = 30.0
 PROBLEMS    = "../problems/**/*.smt25"
 RESULTS_DIR = "../results"
 
