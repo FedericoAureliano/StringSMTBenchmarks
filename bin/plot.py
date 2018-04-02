@@ -118,15 +118,16 @@ def plot_time_for_model(data):
         if solver not in solver_data:
             solver_data[solver] = []
         for psat in points:
-            if psat[2] == "sat":
+            if sat(psat):
                 if "model" not in psat[1]:
                     category = psat[0]
                     name = psat[1][:-len(".smt25")]+ "-model.smt25"
                     tsat = psat[-1]
                     for pmodel in points:
                         if pmodel[1] == name:
-                            tmodel = pmodel[-1]
-                            solver_data[solver].append([tsat, tmodel, category, name])
+                            if not error(pmodel):
+                                tmodel = pmodel[-1]
+                                solver_data[solver].append([tsat, tmodel, category, name])
                             break
 
     cactus = pygal.XY(stroke=False, title="Get-Sat Vs. Get-Model by Instance", x_title="Get-Sat (s)", y_title="Get-Model (s)", dots_size=5, tooltip_border_radius=10, style=CustomStyle, legend_at_bottom=True, legend_at_bottom_columns=4)
