@@ -1,0 +1,5 @@
+(set-logic QF_S)
+(declare-fun var0 () String)
+(assert (str.in.re var0 (re.++ (re.union (re.inter (str.to.re "00") (str.to.re "11")) (re.inter (str.to.re "2") (str.to.re "33"))) (re.++ (re.union (re.inter (str.to.re "444") (str.to.re "55")) (re.inter (str.to.re "66") (str.to.re "77"))) (re.union (re.inter (str.to.re "88") (str.to.re "99")) (re.inter (str.to.re "aaa") (str.to.re "b")))))))
+(check-sat)
+(get-model)
