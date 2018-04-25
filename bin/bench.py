@@ -32,6 +32,7 @@ SOLVERS = {
     "Z3str3" : "z3 smt.string_solver=z3str3",
     "CVC4"   : "cvc4 --lang smt --strings-exp --produce-models",
     "Norn"   : "norn +model",
+    "Trau"   : "Trau",
     # "Sloth" : "sloth",
     # "S3"    : "S3"
 }
