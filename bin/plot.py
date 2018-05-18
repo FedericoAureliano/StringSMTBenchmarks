@@ -2,6 +2,7 @@
 
 RESULTS = "../results/*.csv" 
 IMAGE_DIR = "../images"
+NUM_SOLVERS = 5
 
 import pygal
 from pygal.style import Style
@@ -21,7 +22,7 @@ class CustomStyle(Style):
     opacity = '.8'
     opacity_hover = '.9'
     transition = '100ms'
-    colors = ('#FFD000', '#345995', '#01A337', '#ED2B1A')
+    colors = ('#FFD000', '#345995', '#01A337', '#ED2B1A', '#621396')
 
     label_font_size = 18
     major_label_font_size = 20
@@ -74,7 +75,7 @@ def plot_cacti(data):
         cactus.render_to_file("%s/%s"%(IMAGE_DIR, "%s_cactus.svg" % category))
 
 def get_cactus(data, title):
-    cactus = pygal.XY(stroke=False, title=title, y_title="Time (s)", dots_size=5, tooltip_border_radius=10, style=CustomStyle, legend_at_bottom=True, legend_at_bottom_columns=4)
+    cactus = pygal.XY(stroke=False, title=title, y_title="Time (s)", dots_size=5, tooltip_border_radius=10, style=CustomStyle, legend_at_bottom=True, legend_at_bottom_columns=NUM_SOLVERS)
     for solver, points in sorted(data.items()):
         points = [p for p in sorted(points, key=lambda x: x[-1]) if sat_unsat(p)]
         points = zip(range(len(points)), points)
@@ -91,7 +92,7 @@ def plot_bars(data):
         bar.render_to_file("%s/%s"%(IMAGE_DIR, "%s_bar.svg" % category))
 
 def get_bar(data, title):
-    overall = pygal.Bar(title=title, tooltip_border_radius=10, style=CustomStyle, legend_at_bottom=True, legend_at_bottom_columns=4)
+    overall = pygal.Bar(title=title, tooltip_border_radius=10, style=CustomStyle, legend_at_bottom=True, legend_at_bottom_columns=NUM_SOLVERS)
     overall.x_labels = ["SAT", "UNSAT", "UNKNOWN", "TIMEOUT", "ERROR"]
     totals = {}
     for solver, points in sorted(data.items()):
@@ -130,13 +131,13 @@ def plot_time_for_model(data):
                                 solver_data[solver].append([tsat, tmodel, category, name])
                             break
 
-    cactus = pygal.XY(stroke=False, title="Get-Sat Vs. Get-Model by Instance", x_title="Get-Sat (s)", y_title="Get-Model (s)", dots_size=5, tooltip_border_radius=10, style=CustomStyle, legend_at_bottom=True, legend_at_bottom_columns=4)
+    cactus = pygal.XY(stroke=False, title="Get-Sat Vs. Get-Model by Instance", x_title="Get-Sat (s)", y_title="Get-Model (s)", dots_size=5, tooltip_border_radius=10, style=CustomStyle, legend_at_bottom=True, legend_at_bottom_columns=NUM_SOLVERS)
     for solver, points in sorted(solver_data.items()):
         points = [{'value': (p[0], p[1]), 'label': p[-1], 'xlink':"%s/%s"%(p[2], p[3])} for p in points]
         cactus.add(solver, points)
     cactus.render_to_file("%s/%s"%(IMAGE_DIR, "models_dots.svg"))
 
-    overall = pygal.Bar(title="Get-Sat Vs. Get-Model Average", y_title="Time (s)", tooltip_border_radius=10, style=CustomStyle, legend_at_bottom=True, legend_at_bottom_columns=4)
+    overall = pygal.Bar(title="Get-Sat Vs. Get-Model Average", y_title="Time (s)", tooltip_border_radius=10, style=CustomStyle, legend_at_bottom=True, legend_at_bottom_columns=NUM_SOLVERS)
     overall.x_labels = ["Get-Sat", "Get-Model"]
     for solver, points in sorted(solver_data.items()):
         number = len(points)
